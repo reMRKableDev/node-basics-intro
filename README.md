@@ -24,7 +24,7 @@ To use the app:
 1. Fork and/or Clone repo.
 2. Choose working folder.
 3. Run 'npm install' on your local repo so as to get the required dependencies.
-4. Run app.js.
+4. Start app with either "node app.js" or for continuos development use "nodemon app.js"
 ```
 
 Have fun :)
