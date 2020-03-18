@@ -1,8 +1,8 @@
 const express = require("express");
 const app = express();
 
-const { homeRouter } = require("./routes/homeRouter");
-const { postRouter } = require("./routes/postRouter");
+const { homeRouter } = require("../routes/homeRouter");
+const { postRouter } = require("../routes/postRouter");
 
 app.use(express.json());
 app.use("/", homeRouter);
