@@ -2,7 +2,7 @@
   "name": "server",
   "version": "1.0.0",
   "description": "simple server example",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "test": "jest",
     "start": "node server.js"
