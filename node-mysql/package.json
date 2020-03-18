@@ -2,7 +2,7 @@
   "name": "node-mysql",
   "version": "1.0.0",
   "description": "Node app retrieving data from mysql database",
-  "main": "app.js",
+  "main": "server.js",
   "dependencies": {
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
