@@ -1,0 +1,79 @@
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.site_content {
+  flex: 1;
+}
+
+.nav_container {
+  background-color: #000;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+
+.nav_links {
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav_links:hover {
+  color: #f11000;
+}
+
+.hero {
+  background-image: url("../img/pen-book.jpg");
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.hero h1 {
+  background-color: #fff;
+  padding: 15px;
+}
+
+.contact_form {
+  display: flex;
+  justify-content: center;
+  border: 2px solid #000;
+  flex-direction: column;
+  padding: 20px;
+  height: 50vh;
+  margin: 0 50px;
+}
+
+.contact_form input {
+  padding: 10px;
+  outline: none;
+  margin-bottom: 15px;
+}
+
+.contact_form button {
+  background-color: #f11000;
+  color: #fff;
+  outline: none;
+  text-transform: uppercase;
+  margin: 0 100px;
+  padding: 10px;
+}
+
+footer {
+  background-color: #000;
+  color: #fff;
+}
