@@ -1,7 +1,7 @@
 {
-  "name": "node-static-files",
+  "name": "node-template-engines",
   "version": "1.0.0",
-  "description": "Serving static files with Express",
+  "description": "Serving template engine with Express",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^3.0.1",
     "express": "^4.17.1"
   }
 }
