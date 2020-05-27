@@ -16,7 +16,7 @@
   "devDependencies": {
     "babel-cli": "6.26.0",
     "babel-preset-env": "1.7.0",
-    "jest": "25.1.0",
+    "jest": "26.0.1",
     "superagent": "5.2.2",
     "supertest": "4.0.2"
   }
