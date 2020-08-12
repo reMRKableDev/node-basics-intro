@@ -16,6 +16,6 @@
     "morgan": "^1.9.1"
   },
   "devDependencies": {
-    "jest": "26.0.1"
+    "jest": "26.4.0"
   }
 }
