@@ -1,4 +1,4 @@
-# Node Basics Intro
+# Node Basics Intro 🚀🚀🚀
 
 [![CodeFactor](https://www.codefactor.io/repository/github/remrkabledev/node-basics-intro/badge/master)](https://www.codefactor.io/repository/github/remrkabledev/node-basics-intro/overview/master)
 
