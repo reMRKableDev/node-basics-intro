@@ -4,8 +4,8 @@ const path = require("path");
 const app = express();
 
 // Routes import
-const homeRouter = require("./routes/homeRouter");
-const contactRouter = require("./routes/contactRouter");
+const homeRouter = require("./routes/home.routes");
+const contactRouter = require("./routes/contact.routes");
 
 // Middleware
 app.use(express.urlencoded({ extended: true }));
