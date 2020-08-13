@@ -1,6 +1,6 @@
 # Node Static Files 🚀🚀🚀
 
-This guide looks at creating a server using [Express.js](https://expressjs.com/).
+This guide looks at passing static assets over a server created using [Express.js](https://expressjs.com/).
 
 ![http-banner](static-banner.png)
 
