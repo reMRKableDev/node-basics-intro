@@ -2,12 +2,13 @@
   "name": "node-static-files",
   "version": "1.0.0",
   "description": "Serving static files with Express",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "test": "jest --watchAll=false"
   },
   "keywords": [],
-  "author": "",
+  "author": "Malcolm R. Kente - reMRKable Dev",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^8.2.0",
