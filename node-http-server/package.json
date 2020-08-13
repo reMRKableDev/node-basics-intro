@@ -4,15 +4,16 @@
   "description": "simple server example",
   "main": "server.js",
   "scripts": {
-    "test": "jest",
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "jest --watchAll=false"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.2",
     "chalk": "^4.1.0",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "supertest": "^4.0.2"
   },
   "devDependencies": {
     "jest": "26.4.0"
