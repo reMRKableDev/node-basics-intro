@@ -8,7 +8,6 @@ This guide looks at creating an http server using [Node.js](https://nodejs.org/e
 
 These instructions will help you get started with this project.
 
-
 ### Installing
 
 Run:
@@ -18,6 +17,14 @@ npm install
 ```
 
 This should retrieve all the necessary dependencies named in the `package.json` file.
+
+### How To Use:
+
+Once dependencies are installed, each project can be run using:
+
+```
+npm start
+```
 
 ## Running the tests 🧪
 
@@ -30,5 +37,3 @@ OR
 
 npm run test
 ```
-
-
