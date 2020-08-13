@@ -20,7 +20,7 @@ This should retrieve all the necessary dependencies named in the `package.json` 
 
 ### How To Use:
 
-Once dependencies are installed, each project can be run using:
+Once dependencies are installed, the project can be run using:
 
 ```
 npm start
