@@ -2,7 +2,6 @@
 const express = require("express");
 const path = require("path");
 const app = express();
-const port = process.env.PORT || 3000;
 
 // Routes import
 const homeRouter = require("./routes/homeRouter");
@@ -15,5 +14,7 @@ app.use(express.static("public"));
 app.use("/", homeRouter);
 app.use("/contact", contactRouter);
 
-// Start Server
-app.listen(port, () => console.log(`We're live on port: ${port}`));
+/**
+ * @module app                              The exported application with server instructions
+ */
+module.exports = app;
