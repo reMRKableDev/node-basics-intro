@@ -11,8 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.2",
-    "chalk": "^4.0.0",
-    "morgan": "^1.9.1"
+    "chalk": "^4.1.0",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "jest": "26.4.0"
