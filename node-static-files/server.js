@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 /**
  * @const app                   Import module with server instructions
  * @requires module:app
