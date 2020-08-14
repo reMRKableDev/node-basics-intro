@@ -19,7 +19,7 @@ const router = express.Router();
 /**
  * @method router.get                       Implements GET method
  * @param {string} path                     The endpoint/url for which requests & responses are sent
- * @param {function} readIndexHtml          Renders the static index.html
+ * @param {function} readIndexHtml          Renders the static index.html asset
  */
 router.get("/", readIndexHtml);
 
