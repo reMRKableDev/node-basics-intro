@@ -1,16 +1,29 @@
-// Import necessary packages and set up global variables
+/**
+ * @const express                           Imports express dependency
+ * @requires module:express
+ */
 const express = require("express");
-const path = require("path");
-const app = express();
 
-// Routes import
+/**
+ * @const homeRouter                        Declares route for home
+ * @requires module:home.routes.js
+ *
+ * @const contactRouter                     Declares route for contact
+ * @requires module:contact.routes.js
+ */
 const homeRouter = require("./routes/home.routes");
 const contactRouter = require("./routes/contact.routes");
 
-// Middleware
+/**
+ * @const app                               Express app
+ */
+const app = express();
+
+/**
+ * @method app.use(*)                       Mounts specified middleware function(s) at the specified path
+ */
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
-// Use routes
 app.use("/", homeRouter);
 app.use("/contact", contactRouter);
 
