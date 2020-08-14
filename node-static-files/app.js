@@ -28,6 +28,6 @@ app.use("/", homeRouter);
 app.use("/contact", contactRouter);
 
 /**
- * @module app                              The exported application with server instructions
+ * @module app
  */
 module.exports = app;
