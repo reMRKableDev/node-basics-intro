@@ -15,6 +15,7 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "better-docs": "^2.3.0",
     "jest": "^26.4.0"
   }
 }
