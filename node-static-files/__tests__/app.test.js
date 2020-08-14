@@ -1,9 +1,15 @@
 const request = require("supertest");
 const app = require("../app");
 
+const {
+  validateTruthiness,
+  validateDataTypeOfObject,
+  validateObjectToHaveProperty,
+} = require("../utils/testValidators");
+
 describe("app.js Test Suite", () => {
   test("should check validity of app.js", () => {
-    expect(app).toBeTruthy();
+    validateTruthiness(app);
   });
 
   describe("Tests for '/' endpoint", () => {
@@ -14,15 +20,11 @@ describe("app.js Test Suite", () => {
         .then((response) => {
           const { headers } = response;
 
-          expect(headers).not.toBeNull();
-          expect(typeof headers).not.toBe("string");
-          expect(headers).not.toHaveProperty("server", "gws");
-          expect(headers).not.toHaveProperty("content-type", "text/javascript");
-
-          expect(headers).toBeTruthy();
-          expect(typeof headers).toBe("object");
-          expect(headers).toHaveProperty("x-powered-by", "Express");
-          expect(headers).toHaveProperty(
+          validateTruthiness(headers);
+          validateDataTypeOfObject(headers);
+          validateObjectToHaveProperty(headers, "x-powered-by", "Express");
+          validateObjectToHaveProperty(
+            headers,
             "content-type",
             "text/html; charset=UTF-8"
           );
@@ -52,15 +54,11 @@ describe("app.js Test Suite", () => {
         .then((response) => {
           const { headers } = response;
 
-          expect(headers).not.toBeNull();
-          expect(typeof headers).not.toBe("string");
-          expect(headers).not.toHaveProperty("server", "gws");
-          expect(headers).not.toHaveProperty("content-type", "text/javascript");
-
-          expect(headers).toBeTruthy();
-          expect(typeof headers).toBe("object");
-          expect(headers).toHaveProperty("x-powered-by", "Express");
-          expect(headers).toHaveProperty(
+          validateTruthiness(headers);
+          validateDataTypeOfObject(headers);
+          validateObjectToHaveProperty(headers, "x-powered-by", "Express");
+          validateObjectToHaveProperty(
+            headers,
             "content-type",
             "text/html; charset=UTF-8"
           );
@@ -75,8 +73,7 @@ describe("app.js Test Suite", () => {
         .then((response) => {
           const { text } = response;
 
-          expect(text).not.toBeNull();
-          expect(text).toBeTruthy();
+          validateTruthiness(text);
         });
       done();
     });
