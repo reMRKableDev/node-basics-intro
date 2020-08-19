@@ -1,4 +1,4 @@
-# Node Static Files 🚀🚀🚀
+# Node Template Engines - Embedded JavaScript (EJS) 🚀🚀🚀
 
 This guide looks at using Dynamic Views with [EJS](https://ejs.co/) over a server created using [Express.js](https://expressjs.com/).
 
