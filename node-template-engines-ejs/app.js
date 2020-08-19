@@ -17,5 +17,4 @@ app.set("view engine", "ejs");
 app.use("/", homeRouter);
 app.use("/contact", contactRouter);
 
-// Start Server
-app.listen(port, () => console.log(`We're live on port: ${port}`));
+module.exports = app;
