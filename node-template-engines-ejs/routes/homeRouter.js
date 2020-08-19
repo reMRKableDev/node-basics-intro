@@ -1,8 +1,9 @@
 const express = require("express");
-const homeRouter = express.Router();
 
-homeRouter.get("/", (req, res) => {
-  res.render("index.ejs", { userName: req.query.name });
-});
+const { renderIndex } = require("../controllers/home.controllers");
 
-module.exports = homeRouter;
+const router = express.Router();
+
+router.get("/", renderIndex);
+
+module.exports = router;

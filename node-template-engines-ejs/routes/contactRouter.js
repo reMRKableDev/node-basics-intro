@@ -1,12 +1,14 @@
 const express = require("express");
-const contactRouter = express.Router();
 
-contactRouter.get("/", (req, res) => {
-  res.render("contact");
-});
+const {
+  renderContact,
+  redirectName,
+} = require("../controllers/contact.controllers");
 
-contactRouter.post("/", (req, res) => {
-  res.redirect("/?name=" + req.body.userName);
-});
+const router = express.Router();
 
-module.exports = contactRouter;
+router.get("/", renderContact);
+
+router.post("/", redirectName);
+
+module.exports = router;
