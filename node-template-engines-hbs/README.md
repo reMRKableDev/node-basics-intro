@@ -26,7 +26,7 @@ This should retrieve all the necessary dependencies named in the `package.json` 
 PORT = YOUR-DESIRED-PORT-NUMBER-GOES-HERE
 ```
 
-2. Rename the `.env.sample` to simply `env` so that the environment variables can be read correctly.
+2. Rename the `.env.sample` to simply `.env` so that the environment variables can be read correctly.
 
 3. Once the above is done, the project can be run using:
 
