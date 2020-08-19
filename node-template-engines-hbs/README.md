@@ -1,4 +1,4 @@
-# Node Static Files 🚀🚀🚀
+# Node Template Engines - Handlebars (HBS) 🚀🚀🚀
 
 This guide looks at using Dynamic Views with [Handlebars](https://handlebarsjs.com/) over a server created using [Express.js](https://expressjs.com/).
 
