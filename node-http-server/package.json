@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.20.0",
+    "axios": "^0.21.0",
     "chalk": "^4.1.0",
     "morgan": "^1.10.0",
     "supertest": "^5.0.0"
