@@ -4,14 +4,14 @@ const app = require("../../src/app");
 describe("newsRouter tests", () => {
   const getNewsletterRequest = request(app).get("/newsletter");
 
-  test("root GET route to return with status OK", async () => {
+  test("should validate GET route for newsletter endpoint to return with status OK", async () => {
     const response = await getNewsletterRequest;
     const { statusCode } = response;
 
     expect(statusCode).toBe(200);
   });
 
-  test("root GET route to return some HTML", async () => {
+  test("should validate GET route for newsletter endpoint to return some HTML", async () => {
     const response = await getNewsletterRequest;
     const { text } = response;
 
@@ -19,7 +19,7 @@ describe("newsRouter tests", () => {
     expect(text).toMatch(/form/i);
   });
 
-  test("root POST route to return with status OK", async () => {
+  test("should validate POST route for newsletter endpoint to return with status OK", async () => {
     const testEmail = "test@test.com";
     const response = await request(app)
       .post("/newsletter")
