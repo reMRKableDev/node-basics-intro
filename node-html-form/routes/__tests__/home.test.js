@@ -1,17 +1,19 @@
 const request = require("supertest");
 const app = require("../../src/app");
 
-describe("homeRouter tests", () => {
-  test("root endpoint should respond with status OK", async () => {
+describe("Home route unit test suite", () => {
+  test("should validate that root endpoint responds with status OK", async () => {
     const response = await request(app).get("/");
+    const { status } = response;
 
-    expect(response.status).toBe(200);
+    expect(status).toBe(200);
   });
 
-  test("root endpoint returns some HTML", async () => {
+  test("should validate that text found at root endpoint matches Newsletter", async () => {
     const response = await request(app).get("/");
+    const { text } = response;
 
     expect(response).not.toBeNull();
-    expect(response.text).toMatch(/Newsletter/i);
+    expect(text).toMatch(/Newsletter/i);
   });
 });
