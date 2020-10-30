@@ -1,4 +1,4 @@
-const isPostValid = userInput => {
+exports.isPostValid = (userInput) => {
   if (typeof userInput !== "object") return false;
   if (typeof userInput.title == "undefined" || !userInput.title) return false;
   if (typeof userInput.content == "undefined" || !userInput.content)
@@ -6,5 +6,3 @@ const isPostValid = userInput => {
 
   return true;
 };
-
-module.exports = { isPostValid };

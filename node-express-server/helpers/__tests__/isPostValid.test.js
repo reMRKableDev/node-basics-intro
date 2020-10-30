@@ -1,4 +1,4 @@
-const { isPostValid } = require("../helperFunctions");
+const { isPostValid } = require("../isPostValid.helper");
 
 describe("isPostValid tests", () => {
   test("validity of user input", () => {

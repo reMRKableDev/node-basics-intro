@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const router = Router();
 
-const { isPostValid } = require("../helpers/helperFunctions");
+const { isPostValid } = require("../helpers/isPostValid.helper");
 const { myPosts } = require("../data/postData");
 
 router.get("/", (_, res) => res.status(200).send(myPosts));
