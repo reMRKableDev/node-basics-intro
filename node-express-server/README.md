@@ -2,7 +2,7 @@
 
 This guide looks at creating a server using the web framework [Express.js](https://expressjs.com/).
 
-![express-banner](express-banner.png)
+![express-banner](./assets/express-banner.png)
 
 ## Getting Started 🏁
 
