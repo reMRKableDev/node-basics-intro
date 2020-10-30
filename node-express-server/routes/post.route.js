@@ -1,20 +1,21 @@
-const express = require("express");
-const postRouter = express.Router();
+const { Router } = require("express");
+const router = Router();
 
 const { isPostValid } = require("../helpers/helperFunctions");
 const { myPosts } = require("../data/postData");
 
+router.get("/", (_, res) => res.status(200).send(myPosts));
 
-postRouter.get("/", (req, res) => res.status(200).send(myPosts));
-postRouter.get("/:id", (req, res) => {
-  const foundPost = myPosts.find(post => post.id == req.params.id);
+router.get("/:id", (req, res) => {
+  const { id } = req.params;
+  const foundPost = myPosts.find((post) => post.id == id);
 
   foundPost
     ? res.status(200).send(foundPost)
     : res.status(400).json({ error: "Post Not Found!" });
 });
 
-postRouter.post("/new", (req, res) => {
+router.post("/new", (req, res) => {
   const userInput = req.body;
 
   if (isPostValid(userInput)) {
@@ -28,4 +29,4 @@ postRouter.post("/new", (req, res) => {
   }
 });
 
-module.exports = { postRouter };
+module.exports = router;
