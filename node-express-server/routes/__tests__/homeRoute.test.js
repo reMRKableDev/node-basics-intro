@@ -1,7 +1,7 @@
 const request = require("supertest");
-const app = require("../../src/app");
+const app = require("../../app");
 
-describe("homeRouter tests", () => {
+describe("Unit tests for '/' endpoint", () => {
   test("GET endpoint returns status OK", async () => {
     const response = await request(app).get("/");
 
