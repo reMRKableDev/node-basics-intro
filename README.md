@@ -1,6 +1,6 @@
 # Node Basics Intro 🚀🚀🚀
 
-[![CodeFactor](https://www.codefactor.io/repository/github/remrkabledev/node-basics-intro/badge/master)](https://www.codefactor.io/repository/github/remrkabledev/node-basics-intro/overview/master)
+[![CodeFactor](https://www.codefactor.io/repository/github/remrkabledev/node-basics-intro/badge/master)](https://www.codefactor.io/repository/github/remrkabledev/node-basics-intro/overview/master) [![Renovate](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com)
 
 This repo holds small node projects that introduce concepts, practices and techniques used with Node.js
 
