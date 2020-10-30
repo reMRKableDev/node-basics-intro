@@ -28,7 +28,7 @@ npm start
 
 ## Running the tests 🧪
 
-This app utilizes [Jest](https://jestjs.io/) & [Supertest](https://www.npmjs.com/package/supertest) for testing the components. Tests can be run by using the command:
+This app utilizes [Supertest](https://www.npmjs.com/package/supertest) for testing the components. Tests can be run by using the command:
 
 ```
 npm test
