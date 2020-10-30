@@ -19,7 +19,4 @@ const app = http.createServer((request, response) => {
   }
 });
 
-/**
- * @module app                              The exported application with server instructions
- */
 module.exports = app;
