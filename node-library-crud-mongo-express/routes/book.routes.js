@@ -1,9 +1,7 @@
 const express = require("Express");
-const app = require("../app");
 const router = express.Router();
 
 const Book = require("../models/Book.model");
-const { update } = require("../models/Book.model");
 
 router.get("/books/create", (req, res) => res.render("books-create"));
 
@@ -11,7 +9,7 @@ router.post("/books/create", (req, res) => {
   const { title, author, description, rating } = req.body;
 
   Book.create({ title, author, description, rating })
-    .then((bookFromDB) => res.redirect("/"))
+    .then(() => res.redirect("/"))
     .catch((error) => `Error while creating a new book: ${error}`);
 });
 

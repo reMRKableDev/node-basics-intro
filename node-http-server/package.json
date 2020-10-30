@@ -4,6 +4,7 @@
   "description": "simple server example",
   "main": "server.js",
   "scripts": {
+    "dev": "nodemon server.js",
     "start": "node server.js",
     "test": "jest --watchAll=false"
   },

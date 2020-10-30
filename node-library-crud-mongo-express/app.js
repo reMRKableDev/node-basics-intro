@@ -4,7 +4,6 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const express = require("express");
 const favicon = require("serve-favicon");
-const hbs = require("hbs");
 const mongoose = require("mongoose");
 const logger = require("morgan");
 const path = require("path");
@@ -33,9 +32,10 @@ const app = express();
 
 // Middleware Setup
 app.use(logger("dev"));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json()); // or app.use(express.json()) 
+app.use(bodyParser.urlencoded({ extended: false })); // or app.use(express.urlencoded()))
 app.use(cookieParser());
+
 
 // Express View engine setup
 

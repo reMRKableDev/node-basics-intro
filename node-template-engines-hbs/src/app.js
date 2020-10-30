@@ -2,9 +2,9 @@ const express = require("express");
 const hbs = require("hbs");
 const path = require("path");
 
-const homeRouter = require("./routes/home.routes");
-const playerRouter = require("./routes/players.routes");
-const teamRouter = require("./routes/teams.routes");
+const homeRouter = require("../routes/home.routes");
+const playerRouter = require("../routes/players.routes");
+const teamRouter = require("../routes/teams.routes");
 
 const app = express();
 
