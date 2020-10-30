@@ -15,8 +15,8 @@ describe("newsRouter tests", () => {
     const response = await getNewsletterRequest;
     const { text } = response;
 
-    expect(response).not.toBeNull();
-    expect(response.text).toMatch(/form/i);
+    expect(text).not.toBeNull();
+    expect(text).toMatch(/form/i);
   });
 
   test("root POST route to return with status OK", async () => {

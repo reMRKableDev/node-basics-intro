@@ -13,7 +13,7 @@ describe("Home route unit test suite", () => {
     const response = await request(app).get("/");
     const { text } = response;
 
-    expect(response).not.toBeNull();
+    expect(text).not.toBeNull();
     expect(text).toMatch(/Newsletter/i);
   });
 });
