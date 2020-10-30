@@ -1,5 +1,5 @@
 const request = require("supertest");
-const app = require("../../app");
+const app = require("../../src/app");
 
 describe("homeRouter tests", () => {
   test("root endpoint should respond with status OK", async () => {
