@@ -1,4 +1,4 @@
-# Node HTTP Server 🚀🚀🚀
+# Node Express Server 🚀🚀🚀
 
 This guide looks at creating a server using the web framework [Express.js](https://expressjs.com/).
 
