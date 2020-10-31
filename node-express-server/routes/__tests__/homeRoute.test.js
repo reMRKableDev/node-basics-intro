@@ -1,5 +1,5 @@
 const request = require("supertest");
-const app = require("../../app");
+const app = require("../../src/app");
 
 describe("Unit tests for '/' endpoint", () => {
   test("GET endpoint returns status OK", async () => {
