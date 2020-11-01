@@ -3,13 +3,19 @@ const http = require("http");
 const app = http.createServer((request, response) => {
   if (request.url === "/") {
     response.writeHead(200);
-    response.end("World");
+    response.write("Hello World!");
+    response.end();
   }
 
-  if (request.url === "/about") {
+  if (request.url === "/goodbye") {
     response.writeHead(200);
-    response.write("Goodbye World");
+    response.write("Goodbye World!", { "Content-Type": "text-html" });
     response.end();
+  }
+
+  if (request.url === "/nice") {
+    response.writeHead(200);
+    response.end("Nicely done!");
   }
 
   if (request.url === "/error") {

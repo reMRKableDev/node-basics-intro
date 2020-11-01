@@ -6,19 +6,17 @@ describe("app.js Test Suite", () => {
     expect(app).toBeTruthy();
   });
 
-  test("should return 'World'", (done) => {
+  test("should return 'Hello World'", (done) => {
     request(app)
       .get("/")
       .expect(200)
       .then((response) => {
         const { text } = response;
 
-        expect(text).not.toMatch("Hello");
-        expect(text).toMatch("World");
+        expect(text).not.toMatch("Dummy");
+        expect(text).toMatch("Hello World");
       });
 
     done();
   });
-
-  // TODO: Fix functioning tests for the other routes
 });
