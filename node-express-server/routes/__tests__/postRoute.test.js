@@ -32,7 +32,7 @@ describe("Test suite for '/posts' endpoint", () => {
     expect(body).toEqual(expect.arrayContaining(testPosts));
   });
 
-  test("should validate GET endpoint with valid query params", async () => {
+  test("should validate GET for '/posts/:id' endpoint returns valid query params", async () => {
     const response = await getPostFromQueryParam("1");
     const { statusCode, body } = response;
 
@@ -43,7 +43,7 @@ describe("Test suite for '/posts' endpoint", () => {
     expect(body).toEqual(testPosts[0]);
   });
 
-  test("GET endpoint with invalid query params", async () => {
+  test("should validate GET for '/posts/:id' endpoint returns error on invalid query params", async () => {
     const response = await getPostFromQueryParam("10");
     const { statusCode, body } = response;
 
@@ -54,7 +54,7 @@ describe("Test suite for '/posts' endpoint", () => {
     expect(body).toHaveProperty("error");
   });
 
-  test("POST endpoint for new user", async () => {
+  test("should validate POST for '/posts/new' endpoint returns post list with new post", async () => {
     const testPost = {
       id: 4,
       title: "fourth title",
@@ -71,7 +71,7 @@ describe("Test suite for '/posts' endpoint", () => {
     expect(body).toContainEqual(expect.objectContaining(testPost));
   });
 
-  test("POST endpoint for invalid new user", async () => {
+  test("should validate POST for '/posts/new' endpoint returns error for invalid post", async () => {
     const response = await postNewPostRequest({});
     const { statusCode, body } = response;
 
