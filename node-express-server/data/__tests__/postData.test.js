@@ -1,18 +1,18 @@
 const { myPosts } = require("../postData");
 
-describe("postData", () => {
-  test("validity of the object", () => {
+describe("Test suite for postData.js", () => {
+  test("should validate the object", () => {
     expect(myPosts).toBeTruthy();
-    expect(typeof myPosts).toBe("object");
     expect(typeof myPosts).not.toBe("string");
+    expect(typeof myPosts).toBe("object");
   });
 
-  test("that object has valid keys", () => {
-    myPosts.forEach(post => {
+  test("should validate that object has valid keys", () => {
+    myPosts.forEach((post) => {
+      expect(post).not.toHaveProperty("chicken");
       expect(post).toHaveProperty("id");
       expect(post).toHaveProperty("title");
       expect(post).toHaveProperty("content");
-      expect(post).not.toHaveProperty("chicken");
     });
   });
 });

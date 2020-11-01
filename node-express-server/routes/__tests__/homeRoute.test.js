@@ -1,17 +1,22 @@
 const request = require("supertest");
 const app = require("../../src/app");
 
-describe("Unit tests for '/' endpoint", () => {
-  test("GET endpoint returns status OK", async () => {
-    const response = await request(app).get("/");
+const getIndexRequest = () => request(app).get("/");
 
-    expect(response.statusCode).toBe(200);
-    expect(response.text).toMatch(/blog app/i);
+describe("Test suite for home.route.js", () => {
+  test("should validate GET for '/' returns status code 200", async () => {
+    const response = await getIndexRequest();
+    const { statusCode } = response;
+
+    expect(statusCode).not.toBe(404);
+    expect(statusCode).toBe(200);
   });
 
-  test("GET endpoint returns valid data", async () => {
-    const response = await request(app).get("/");
+  test("should validate GET for '/' returns valid data", async () => {
+    const response = await getIndexRequest();
+    const { text } = response;
 
-    expect(response.text).toMatch(/blog app/i);
+    expect(text).not.toMatch(/lorem ipsum/i);
+    expect(text).toMatch(/blog app/i);
   });
 });

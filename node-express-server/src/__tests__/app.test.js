@@ -1,7 +1,7 @@
 const app = require("../app");
 const { locals } = app;
 
-describe("app.js Test Suite", () => {
+describe("Test suite for app.js", () => {
   test("should check validity of app.js", () => {
     expect(app).toBeTruthy();
   });
