@@ -8,10 +8,10 @@ module.exports = {
   calculateCircumference,
 };
 
-// exports.PI = PI
-// exports.calculateArea = calculateArea
-// exports.calculateCircumference = calculateCircumference
+/* exports.PI = PI
+exports.calculateArea = calculateArea
+exports.calculateCircumference = calculateCircumference */
 
-// exports. PI = 3.14
-// exports calculateCircumference = (incomingRadius) => 2 * incomingRadius * PI;
-// exports calculateArea = (incomingRadius) => incomingRadius ** 2 * PI;
+/* exports. PI = 3.14
+exports.calculateCircumference = (incomingRadius) => 2 * incomingRadius * PI;
+exports.calculateArea = (incomingRadius) => incomingRadius ** 2 * PI; */
