@@ -1,0 +1,17 @@
+<h1>Welcome to the home page</h1>
+<br>
+<p>This application uses Dark Sky API, if you click on a city name you will get its weather forecast</p>
+<br>
+<div class="forecast">
+  {{#if weather}}
+  <p> Summary: {{weather.summary}}</p>
+  {{/if}}
+</div>
+<br>
+{{#if cities}}
+<ul class="cities_list">
+  {{#each cities}}
+    <li> The city of <span><a href="/{{this.lng}}/{{this.lat}}">{{this.name}}</a></span> is located in {{this.country.country}}</li>
+  {{/each}}
+</ul>
+{{/if}}
