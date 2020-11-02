@@ -1,4 +1,4 @@
-require("dotenv").config(); // allows to read values from .env file
+require("../../05-node-express-databases/node-express-mongo-crud-library/node_modules/dotenv").config(); // allows to read values from .env file
 
 const mysql = require("mysql");
 const connection = mysql.createConnection({
