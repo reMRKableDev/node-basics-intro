@@ -4,10 +4,12 @@
   "description": "Getting started with npm packages",
   "main": "app.js",
   "scripts": {
-   "start": "node app.js",
-   "dev": "nodemon app.js"
+    "start": "node app.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.0"
+  }
 }
