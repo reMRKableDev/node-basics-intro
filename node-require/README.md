@@ -1,4 +1,4 @@
-# Node Require 🚀🚀🚀
+# Node Exports & Require 🚀🚀🚀
 
 This guide looks at how to export & import javascript files/modules.
 
