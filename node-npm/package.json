@@ -1,0 +1,13 @@
+{
+  "name": "node-npm",
+  "version": "1.0.0",
+  "description": "Getting started with npm packages",
+  "main": "app.js",
+  "scripts": {
+   "start": "node app.js",
+   "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
