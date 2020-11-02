@@ -2,7 +2,7 @@
 
 This guide looks at passing static assets over a server created using [Express.js](https://expressjs.com/).
 
-![http-banner](static-banner.png)
+![static-banner](static-banner.png)
 
 ## Getting Started 🏁
 
@@ -32,6 +32,12 @@ PORT = YOUR-DESIRED-PORT-NUMBER-GOES-HERE
 
 ```
 npm start
+```
+
+OR
+
+```
+npm run dev
 ```
 
 ## Running the tests 🧪
