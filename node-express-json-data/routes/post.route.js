@@ -23,9 +23,7 @@ router.post("/new", (req, res) => {
     myPosts.push(userInput);
     res.status(201).send(myPosts);
   } else {
-    res
-      .status(400)
-      .json({ error: "Post isn't valid, please review and resubmit!" });
+    res.status(400).json({ error: "Post isn't valid, please review and resubmit!" });
   }
 });
 

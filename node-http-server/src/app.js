@@ -7,7 +7,7 @@ const app = http.createServer((request, response) => {
     response.end();
   } else if (request.url === "/goodbye") {
     response.writeHead(200);
-    response.write("Goodbye World!", { "Content-Type": "text-html" });
+    response.write("Goodbye World!");
     response.end();
   } else if (request.url === "/nice") {
     response.writeHead(200);
