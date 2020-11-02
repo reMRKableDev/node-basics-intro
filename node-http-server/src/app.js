@@ -5,20 +5,14 @@ const app = http.createServer((request, response) => {
     response.writeHead(200);
     response.write("Hello World!");
     response.end();
-  }
-
-  if (request.url === "/goodbye") {
+  } else if (request.url === "/goodbye") {
     response.writeHead(200);
     response.write("Goodbye World!", { "Content-Type": "text-html" });
     response.end();
-  }
-
-  if (request.url === "/nice") {
+  } else if (request.url === "/nice") {
     response.writeHead(200);
     response.end("Nicely done!");
-  }
-
-  if (request.url === "/error") {
+  } else {
     response.writeHead(200);
     response.write(JSON.stringify({ error: "server error" }));
     response.end();
