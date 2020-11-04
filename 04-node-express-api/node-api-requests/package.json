@@ -17,6 +17,7 @@
     "country-json": "^1.1.0",
     "express": "^4.17.1",
     "hbs": "^4.1.1",
-    "mongoose": "^5.10.11"
+    "mongoose": "^5.10.11",
+    "morgan": "^1.10.0"
   }
 }
