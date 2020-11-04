@@ -32,10 +32,9 @@ const app = express();
 
 // Middleware Setup
 app.use(logger("dev"));
-app.use(bodyParser.json()); // or app.use(express.json()) 
+app.use(bodyParser.json()); // or app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: false })); // or app.use(express.urlencoded()))
 app.use(cookieParser());
-
 
 // Express View engine setup
 
@@ -55,9 +54,7 @@ app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
 // default value for title local
 app.locals.title = "Express - Generated with IronGenerator";
 
-const index = require("./routes/index");
-const booksRouter = require("./routes/book.routes");
-app.use("/", index);
-app.use("/", booksRouter);
+app.use("/", require("./routes/index"));
+app.use("/", require("./routes/book.routes"));
 
 module.exports = app;
