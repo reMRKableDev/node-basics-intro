@@ -1,21 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <title>Players</title>
-    <link rel="stylesheet" href="/stylesheets/styles.css">
-</head>
-
-<body>
-    <div class="container">
-        <h1>Players</h1>
-        <div class="row">
-            {{#each players}}
-                {{> playerCard this}}
-            {{/each}}
-        </div>
+<div class="container">
+    <h1>Players</h1>
+    <div class="row">
+        {{#each players}}
+        {{> playerCard this}}
+        {{/each}}
     </div>
-</body>
-
-</html>
+</div>
