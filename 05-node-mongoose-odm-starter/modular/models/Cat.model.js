@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 const { Schema, model } = mongoose;
 
-/* DATA MODELING */
-// Schema
 const catSchema = new Schema(
   {
     name: { type: String, required: true },
@@ -14,5 +12,4 @@ const catSchema = new Schema(
   { timestamps: true }
 );
 
-// Model
 exports.Cat = model("Cats", catSchema);
