@@ -1,0 +1,21 @@
+[
+  {
+    "breed": "Bengal",
+    "hasLegs": 4
+  },
+  {
+    "name": "Sashimi",
+    "breed": "Maine Coon",
+    "age": 4,
+    "color": "Brown",
+    "hasLegs": 2,
+    "nrKittens": 6
+  },
+  {
+    "name": "Lyla",
+    "breed": "Sphynx",
+    "age": 7,
+    "color": "Gray",
+    "hasLegs": 4
+  }
+]
