@@ -1,8 +1,24 @@
 const mongoose = require("mongoose");
 const catsData = require("./cats.json");
-const { Cat } = require("./models/Cat.model");
+const { Schema, model } = mongoose;
 
-// Create a connection between my node app and mongo
+/* DATA MODELING */
+// Schema
+const catSchema = new Schema(
+  {
+    name: { type: String, required: true },
+    breed: { type: String },
+    age: { type: Number },
+    color: { type: String },
+    hasLegs: { type: Number },
+  },
+  { timestamps: true }
+);
+
+// Model
+const Cat = model("Cats", catSchema);
+
+// Mongoose db connection
 mongoose
   .connect("mongodb://localhost/mongoose-intro", {
     useNewUrlParser: true,
@@ -16,7 +32,7 @@ mongoose
     console.error(`Error while connecting to db: ${connectErr}`)
   );
 
-/* CREATE */
+// object
 const catObj = {
   name: "Johnny",
   breed: "Bengal",
@@ -25,7 +41,7 @@ const catObj = {
   hasLegs: true,
 };
 
-// 1
+/* CREATE */
 const saveSingleCatObjectUsingInstanceOfModel = () => {
   const kitty = new Cat(catObj);
 
@@ -34,19 +50,22 @@ const saveSingleCatObjectUsingInstanceOfModel = () => {
     .then((results) => console.log(`Saved new cat: ${results}`))
     .catch((saveErr) => console.error(`Save failed: ${saveErr}`));
 };
-saveSingleCatObjectUsingInstanceOfModel();
 
-// 2
+// saveSingleCatObjectUsingInstanceOfModel();
+
 const createSingleCatObjectUsingModel = () =>
   Cat.create(catObj)
     .then((results) => console.log(`Saved new cat: ${results}`))
     .catch((saveErr) => console.error(`Save failed: ${saveErr}`));
 
-// 3
+// createSingleCatObjectUsingModel()
+
 const createMultipleCatObjects = () =>
   Cat.insertMany(catsData)
     .then((results) => console.log(`Saved new cats: ${results}`))
     .catch((saveErr) => console.error(`Save failed: ${saveErr}`));
+
+// createMultipleCatObjects();
 
 /* READ */
 const findAllSavedCatData = () =>
@@ -54,19 +73,24 @@ const findAllSavedCatData = () =>
     .then((results) => console.log(`Found cats: ${results}`))
     .catch((saveErr) => console.error(`Save failed: ${saveErr}`));
 
+// findAllSavedCatData();
+
 /* UPDATE */
 const updateOneSavedCatData = () =>
   Cat.updateOne({ name: "Garfield" }, { breed: "Ankara" })
     .then(() => console.log(`Cat is updated`))
     .catch((saveErr) => console.error(`Save failed: ${saveErr}`));
 
+// updateOneSavedCatData
+
 /* DELETE */
-const updateOneSavedCatData = () =>
+const deleteOneSavedCatData = () =>
   Cat.deleteOne({ name: "Garfield" })
     .then(() => console.log(`Cat is deleted`))
     .catch((saveErr) => console.error(`Save failed: ${saveErr}`));
 
-// Disconnection
+// deleteOneSavedCatData()
+
 process.on("SIGINT", () => {
   mongoose.connection.close(() => {
     console.log(`Mongo connection disconnected`);
