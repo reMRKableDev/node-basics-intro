@@ -1,68 +1,69 @@
 const mongoose = require("mongoose");
-const { Schema, model } = mongoose;
+const { Cat } = require("./models/Cat.model");
 
-// Model Schema
-const shoeSchema = new Schema(
-  {
-    name: String,
-    brand: String,
-    size: Number,
-    color: String,
-    isAvailable: Boolean,
-  },
-  { timestamps: true }
-);
-
-const Shoe = model("Shoes", shoeSchema);
-
-// Mongoose connection
+// Create a connection between my node app and mongo
 mongoose
   .connect("mongodb://localhost/mongoose-intro", {
+    useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
-    useNewUrlParser: true,
   })
   .then((db) =>
-    console.log(
-      `Successfully connected to Mongo! Database name: ${db.connections[0].name}`
-    )
+    console.log(`Successful db connection: ${db.connections[0].name}`)
   )
-  .catch((error) =>
-    console.error(`Error occurred while connecting to Mongo: ${error}`)
+  .catch((connectErr) =>
+    console.error(`Error while connecting to db: ${connectErr}`)
   );
 
-const airMax = {
-  name: "Air Max 97",
-  brand: "Nike",
-  size: 44,
-  color: "Wolf Grey/Black/White/Red",
-  isAvailable: true,
+/* CREATE */
+// single Object
+const catObj = {
+  name: "Johnny",
+  breed: "Bengal",
+  age: 6,
+  color: "Orange/Black",
+  hasLegs: true,
 };
 
-/* CREATE */
-
-// .save() --> ran on instance method of a model.
-const nikeShoe = new Shoe(airMax);
-/* nikeShoe
+// .save() --> can be run on an instance of the Cat model
+const kitty = new Cat(catObj);
+kitty
   .save()
-  .then((shoeSavedInDb) => console.log(`New shoe saved: ${shoeSavedInDb}`))
-  .catch((saveError) => console.error(`Error while saving: ${saveError}`)); */
+  .then((results) => console.log(`Saved new cat: ${results}`))
+  .catch((saveErr) => console.error(`Save failed: ${saveErr}`));
 
-// .create() --> ran on the model itself, common way.
-Shoe.create(airMax)
-  .then((shoeSavedInDb) => console.log(`New shoe saved: ${shoeSavedInDb}`))
-  .catch((createError) => console.error(`Error while saving: ${createError}`));
+// .create() --> run this on the Cat model itself
+Cat.create(catObj)
+  .then((results) => console.log(`Saved new cat: ${results}`))
+  .catch((saveErr) => console.error(`Save failed: ${saveErr}`));
+
+// .insertMany() --> create multiple values
+Cat.insertMany(catsData)
+  .then((results) => console.log(`Saved new cats: ${results}`))
+  .catch((saveErr) => console.error(`Save failed: ${saveErr}`));
 
 /* READ */
+// .find()
+Cat.find({})
+  .then((results) => console.log(`Found cats: ${results}`))
+  .catch((saveErr) => console.error(`Save failed: ${saveErr}`));
 
 /* UPDATE */
+// .updateOne()
+Cat.updateOne({ name: "Garfield" }, { breed: "Ankara" })
+  .then(() => console.log(`Cat is updated`))
+  .catch((saveErr) => console.error(`Save failed: ${saveErr}`));
 
 /* DELETE */
+// . deleteOne()
+Cat.deleteOne({ name: "Garfield" })
+  .then(() => console.log(`Cat is deleted`))
+  .catch((saveErr) => console.error(`Save failed: ${saveErr}`));
 
-// Mongoose disconnection
+// Disconnection
 process.on("SIGINT", () => {
   mongoose.connection.close(() => {
-    console.log("Mongo connection disconnected through app termination!");
+    console.log(`Mongo connection disconnected`);
     process.exit(0);
   });
 });
