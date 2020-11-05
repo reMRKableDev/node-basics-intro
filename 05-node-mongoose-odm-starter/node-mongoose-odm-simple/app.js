@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const catsData = require("./cats.json");
 const { Cat } = require("./models/Cat.model");
 
 // Create a connection between my node app and mongo
@@ -25,37 +26,36 @@ const catObj = {
   hasLegs: true,
 };
 
-// .save() --> can be run on an instance of the Cat model
 const kitty = new Cat(catObj);
-kitty
-  .save()
-  .then((results) => console.log(`Saved new cat: ${results}`))
-  .catch((saveErr) => console.error(`Save failed: ${saveErr}`));
+// .save() --> can be run on an instance of the Cat model
+const saveInstanceOfCatModel = () => {
+  kitty
+    .save()
+    .then((results) => console.log(`Saved new cat: ${results}`))
+    .catch((saveErr) => console.error(`Save failed: ${saveErr}`));
+};
 
-// .create() --> run this on the Cat model itself
+// .create single object --> run this on the Cat model itself
 Cat.create(catObj)
   .then((results) => console.log(`Saved new cat: ${results}`))
   .catch((saveErr) => console.error(`Save failed: ${saveErr}`));
 
-// .insertMany() --> create multiple values
+// Create multiple values
 Cat.insertMany(catsData)
   .then((results) => console.log(`Saved new cats: ${results}`))
   .catch((saveErr) => console.error(`Save failed: ${saveErr}`));
 
 /* READ */
-// .find()
 Cat.find({})
   .then((results) => console.log(`Found cats: ${results}`))
   .catch((saveErr) => console.error(`Save failed: ${saveErr}`));
 
 /* UPDATE */
-// .updateOne()
 Cat.updateOne({ name: "Garfield" }, { breed: "Ankara" })
   .then(() => console.log(`Cat is updated`))
   .catch((saveErr) => console.error(`Save failed: ${saveErr}`));
 
 /* DELETE */
-// . deleteOne()
 Cat.deleteOne({ name: "Garfield" })
   .then(() => console.log(`Cat is deleted`))
   .catch((saveErr) => console.error(`Save failed: ${saveErr}`));
