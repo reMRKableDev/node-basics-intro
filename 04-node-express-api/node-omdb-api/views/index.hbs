@@ -1,8 +1,19 @@
 <div class="search-container">
     <h1><u>Search Page</u></h1>
-    <br/>
+    <br />
     <form action="/searchResults" method="GET">
-        <input type="search" name="movieName">
-        <button type="submit">Search</button>
+        <fieldset>
+            <legend>Form using <b>GET</b>:</legend>
+            <input type="search" name="movieName" placeholder="Search for a movie...">
+            <button type="submit">Search</button>
+        </fieldset>
+    </form>
+    <br>
+    <form action="/searchResults" method="POST">
+        <fieldset>
+            <legend>Form using <b>POST</b>:</legend>
+            <input type="search" name="movieName" placeholder="Search for a movie...">
+            <button type="submit">Search</button>
+        </fieldset>
     </form>
 </div>

@@ -6,13 +6,7 @@
     <ul class="movie-list">
         {{#each Search}}
         <li>
-            <div class="description">
-                <span><u>{{this.Title}}</u> </span>
-                <br/>
-                <a href="/movie/{{this.imdbID}}"><img src="{{this.Poster}}" width="100px" height="100px"/></a> 
-                <br/>
-                <span>Released in {{this.Year}}</span>
-            </div> 
+            {{> movieCard this}}
         </li>
         {{/each}}
     </ul>
