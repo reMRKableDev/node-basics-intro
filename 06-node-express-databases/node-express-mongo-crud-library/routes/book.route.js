@@ -3,6 +3,14 @@ const router = express.Router();
 
 const Book = require("../models/Book.model");
 
+router.get("/books", (req, res) => {
+  Book.find({})
+    .then((allTheBooksFromDB) =>
+      res.render("books-list", { allTheBooksFromDB })
+    )
+    .catch((error) => `Error while fetching all books: ${error}`);
+});
+
 router.get("/books/create", (req, res) => res.render("books-create"));
 
 router.post("/books/create", (req, res) => {
@@ -13,6 +21,14 @@ router.post("/books/create", (req, res) => {
     .catch((error) => `Error while creating a new book: ${error}`);
 });
 
+router.get("/books/:id", (req, res) => {
+  const { id } = req.params;
+
+  Book.findById(id)
+    .then((foundBook) => res.render("books-details", foundBook))
+    .catch((error) => `Error while creating a new book: ${error}`);
+});
+
 router.get("/books/:id/edit", (req, res) => {
   const { id } = req.params;
 
@@ -20,9 +36,7 @@ router.get("/books/:id/edit", (req, res) => {
     .then((bookToEdit) => {
       res.render("books-edit", bookToEdit);
     })
-    .catch((error) =>
-      console.log(`Error while getting a single book for edit: ${error}`)
-    );
+    .catch((error) => `Error while getting a single book for edit: ${error}`);
 });
 
 router.post("/books/:id/edit", (req, res) => {

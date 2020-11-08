@@ -1,6 +1,5 @@
 require("dotenv").config();
 
-const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const express = require("express");
 const favicon = require("serve-favicon");
@@ -32,8 +31,8 @@ const app = express();
 
 // Middleware Setup
 app.use(logger("dev"));
-app.use(bodyParser.json()); // or app.use(express.json())
-app.use(bodyParser.urlencoded({ extended: false })); // or app.use(express.urlencoded()))
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 // Express View engine setup
@@ -55,6 +54,6 @@ app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
 app.locals.title = "Express - Generated with IronGenerator";
 
 app.use("/", require("./routes/index"));
-app.use("/", require("./routes/book.routes"));
+app.use("/", require("./routes/book.route"));
 
 module.exports = app;
