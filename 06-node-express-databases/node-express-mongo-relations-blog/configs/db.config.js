@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-exports.connectDB = mongoose
+mongoose
   .connect("mongodb://localhost/node-express-mongo-relations-blog", {
     useNewUrlParser: true,
     useCreateIndex: true,

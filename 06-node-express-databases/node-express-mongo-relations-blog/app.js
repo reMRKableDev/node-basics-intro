@@ -7,9 +7,8 @@ const hbs = require("hbs");
 const logger = require("morgan");
 const path = require("path");
 
-const { connectDB } = require("./configs/db.config");
-
-connectDB();
+// require database configuration
+require("./configs/db.config");
 
 const app_name = require("./package.json").name;
 const debug = require("debug")(
