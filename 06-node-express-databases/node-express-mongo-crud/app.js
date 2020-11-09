@@ -1,17 +1,19 @@
 require("dotenv").config();
 
+const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const express = require("express");
 const favicon = require("serve-favicon");
+const hbs = require("hbs");
 const mongoose = require("mongoose");
 const logger = require("morgan");
 const path = require("path");
 
 mongoose
   .connect("mongodb://localhost/library-project", {
-    useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    useCreateIndex: true,
   })
   .then((x) => {
     console.log(
@@ -53,7 +55,7 @@ app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
 // default value for title local
 app.locals.title = "Express - Generated with IronGenerator";
 
-app.use("/", require("./routes/book.route"));
-//app.use("/", require("./routes/book.route"));
+const index = require("./routes/index");
+app.use("/", index);
 
 module.exports = app;
