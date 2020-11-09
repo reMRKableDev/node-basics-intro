@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "DEBUG=node-express-mongo-relations-blog:* nodemon ./bin/www",
-    "dev-windows": "nodemon ./bin/www"
+    "dev-windows": "nodemon ./bin/www",
+    "seeds": "node ./bin/seeds.js"
   },
   "dependencies": {
     "cookie-parser": "1.4.5",

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,20 @@
   <title>{{title}}</title>
   <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
+
 <body>
+  <header>
+    <nav>
+      {{!-- <a href="/users">Users</a> --}}
+      {{!-- <a href="/posts">Latest posts</a> --}}
+      <a href="/post-create">Create a new post</a>
+      <a href="/user-create">Register</a>
+    </nav>
+  </header>
 
   {{{body}}}
 
   <script src="/javascripts/script.js"></script>
 </body>
+
 </html>
