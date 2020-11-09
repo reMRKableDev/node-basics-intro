@@ -10,9 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cities.json": "^1.1.5",
     "express": "^4.17.1",
     "hbs": "^4.1.1",
-    "morgan": "^1.10.0",
-    "punkapi-javascript-wrapper": "^1.0.2"
+    "morgan": "^1.10.0"
   }
 }
