@@ -6,7 +6,7 @@ const Book = require("../models/Book.model");
 /* CRUD */
 
 // Create a new book to add to the db
-router.get("/books/create", (req, res) => res.render("book-create"));
+router.get("/books/create", (req, res) => res.render("books-create"));
 
 router.post("/books/create", (req, res) => {
   const { title, description, author, rating } = req.body;
@@ -30,7 +30,7 @@ router.get("/books/:id", (req, res) => {
   const { id } = req.params;
 
   Book.findOne({ _id: id })
-    .then((theBook) => res.render("book-details", { book: theBook }))
+    .then((theBook) => res.render("books-details", theBook))
     .catch((error) =>
       console.log("Error while retrieving book details: ", error)
     );
@@ -41,7 +41,7 @@ router.get("/books/:id/edit", (req, res) => {
   const { id } = req.params;
 
   Book.findById(id)
-    .then((bookToEdit) => res.render("book-edit", bookToEdit))
+    .then((bookToEdit) => res.render("books-edit", bookToEdit))
     .catch((error) =>
       console.log("Error while updating book details: ", error)
     );
