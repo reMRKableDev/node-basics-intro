@@ -19,6 +19,7 @@
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
+    "debug": "^4.2.0",
     "nodemon": "^2.0.1"
   }
 }
