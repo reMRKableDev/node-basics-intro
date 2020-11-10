@@ -2,10 +2,11 @@
   "name": "node-bcrypt",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "sync": "node syncHash.js",
+    "promise": "node promiseHash.js",
+    "async": "node asyncAwaitHash.js"
   },
   "keywords": [],
   "author": "",
