@@ -3,6 +3,14 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
 a {
-  color: #00B7FF; }
+  color: #00b7ff; }
+
+nav {
+  background-color: #00b7ff;
+  padding: 10px; }
+  nav a {
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 5px; }
 
 /*# sourceMappingURL=style.css.map */

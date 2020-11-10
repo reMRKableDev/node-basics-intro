@@ -1,10 +1,11 @@
 const mongoose = require("mongoose");
 
 mongoose
-  .connect("mongodb://localhost/node-express-mongo-relations-blog", {
+  .connect("mongodb://localhost/blog-app", {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
+    useFindAndModify: true,
   })
   .then((x) => {
     console.log(

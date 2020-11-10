@@ -28,7 +28,7 @@ router.post("/user-create", (req, res) => {
         return;
       }
     })
-    .catch((err) => console.log(`Error while creating a new user: ${err}`));
+    .catch((err) => console.error(`Error while creating a new user: ${err}`));
 });
 
 // ****************************************************************************************
@@ -39,7 +39,7 @@ router.get("/users", (req, res) => {
   User.find() // <-- .find() method gives us always an ARRAY back
     .then((usersFromDB) => res.render("users/list", { users: usersFromDB }))
     .catch((err) =>
-      console.log(`Error while getting users from the DB: ${err}`)
+      console.error(`Error while getting users from the DB: ${err}`)
     );
 });
 
@@ -47,6 +47,13 @@ router.get("/users", (req, res) => {
 // GET details of a specific user (primarily their posts)
 // ****************************************************************************************
 
-// ... your code here
+router.get("/users/:userId/posts", (req, res) => {
+  const { userId } = req.params;
+
+  User.findById(userId)
+    .populate("posts")
+    .then((userFromDB) => console.log(userFromDB))
+    .catch((err) => `Error while getting user from the DB: ${err}`);
+});
 
 module.exports = router;
