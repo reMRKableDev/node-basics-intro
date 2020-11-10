@@ -15,7 +15,7 @@ const userSchema = new Schema(
       lowercase: true,
       trim: true,
     },
-    // add password property here
+    // 1. Add passwordHash property here
     passwordHash: {
       type: String,
       required: [true, "Password is required."],
