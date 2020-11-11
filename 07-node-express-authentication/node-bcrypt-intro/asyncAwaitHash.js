@@ -1,5 +1,5 @@
 const bcrypt = require("bcrypt");
-const { saltRounds, passwordOne } = require("./config");
+const { saltRounds, passwordOne, passwordTwo } = require("./config");
 
 // ****************************************************************************************
 // Using bcrypt with async ... await
@@ -12,7 +12,7 @@ const hash = async () => {
 };
 
 const compare = async (hashedPasswordToCompare) => {
-  const match = await bcrypt.compare(passwordOne, hashedPasswordToCompare);
+  const match = await bcrypt.compare(passwordTwo, hashedPasswordToCompare);
   return match;
 };
 
