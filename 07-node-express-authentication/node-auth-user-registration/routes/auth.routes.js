@@ -13,24 +13,33 @@ router.get("/signup", (req, res) => res.render("auth/signup"));
 router.post("/signup", (req, res, next) => {
   const { username, email, password } = req.body;
 
-  // Validate that incoming data is not empty
+  // Validate that incoming data is not empty.
   if (!username || !email || !password) {
-    if (password !== /^\S+@\S+\.\S+$/) {
-      res.render("auth/signup", {
-        validationError: "Please use a valid email address.",
-        errorMessage:
-          "All fields are mandatory. Please provide your username, email and password.",
-        username,
-        email,
-      });
-    }
+    res.render("auth/signup", {
+      email,
+      username,
+      errorMessage:
+        "All fields are mandatory. Please provide your username, email and password.",
+    });
     return;
   }
 
-  // make sure passwords are strong:
-  const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
+  const emailFormatRegex = /^\S+@\S+\.\S+$/;
 
-  if (!regex.test(password)) {
+  if (!emailFormatRegex.test(email)) {
+    res.render("auth/signup", {
+      email,
+      username,
+      validationError: "Please use a valid email address.",
+    });
+    return;
+  }
+
+  // Strong password pattern.
+  const strongPasswordRegex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
+
+  // Validate that incoming password matches regex pattern.
+  if (!strongPasswordRegex.test(password)) {
     res.status(500).render("auth/signup", {
       email,
       username,
@@ -52,11 +61,15 @@ router.post("/signup", (req, res, next) => {
         })
         .catch((error) => {
           if (error instanceof mongoose.Error.ValidationError) {
-            res
-              .status(500)
-              .render("auth/signup", { validationError: error.message });
+            res.status(500).render("auth/signup", {
+              email,
+              username,
+              validationError: error.message,
+            });
           } else if (error.code === 11000) {
             res.status(500).render("auth/signup", {
+              email,
+              username,
               errorMessage:
                 "Username and email need to be unique. Either username or email is already used.",
             });
