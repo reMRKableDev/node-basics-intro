@@ -1,0 +1,17 @@
+{
+  "name": "node-bcrypt-intro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sync": "node syncHash.js",
+    "promise": "node promiseHash.js",
+    "async": "node asyncAwaitHash.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.0"
+  }
+}

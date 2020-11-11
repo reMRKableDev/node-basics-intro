@@ -1,0 +1,13 @@
+<div class="results-container">
+    <h1><u>Search Results Page</u></h1>
+    <br>
+    <p>You're looking for {{movieName}}, there was {{totalResults}} movies matching your search</p>
+    <br>
+    <ul class="movie-list">
+        {{#each Search}}
+        <li>
+            {{> movieCard this}}
+        </li>
+        {{/each}}
+    </ul>
+</div>

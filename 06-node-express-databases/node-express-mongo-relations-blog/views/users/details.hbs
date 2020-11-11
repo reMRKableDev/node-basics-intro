@@ -1,0 +1,11 @@
+<h2>All posts made by {{username}}</h2>
+
+<section>
+    {{#each posts}}
+    <article>
+        <h3>Post Title: {{ title }}</h3>
+        <p>Post Content: {{content}}</p>
+        <hr>
+    </article>
+    {{/each}}
+</section>

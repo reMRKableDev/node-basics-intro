@@ -1,15 +1,14 @@
 {
-  "name": "node-library-crud-mongo-express",
+  "name": "node-express-mongo-relations-blog",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "DEBUG=node-library-crud-mongo-express:* nodemon ./bin/www",
+    "dev": "DEBUG=node-express-mongo-relations-blog:* nodemon ./bin/www",
     "dev-windows": "nodemon ./bin/www",
-    "seed": "node bin/seed.js"
+    "seeds": "node ./bin/seeds.js"
   },
   "dependencies": {
-    "body-parser": "1.19.0",
     "cookie-parser": "1.4.5",
     "dotenv": "8.2.0",
     "express": "4.17.1",
