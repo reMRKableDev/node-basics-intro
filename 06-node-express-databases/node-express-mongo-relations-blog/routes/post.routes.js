@@ -43,7 +43,10 @@ router.post("/post-create", (req, res) => {
 router.get("/posts", (req, res) => {
   Post.find()
     .populate("author") // --> we are saying: give me whole user object with this ID (author represents an ID in our case)
-    .then((dbPosts) => res.render("posts/list", { posts: dbPosts }))
+    .then((dbPosts) => {
+      console.log(dbPosts);
+      res.render("posts/list", { posts: dbPosts });
+    })
     .catch((err) =>
       console.error(`Err while getting the posts from the DB: ${err}`)
     );
