@@ -83,7 +83,59 @@ router.post("/signup", (req, res, next) => {
 
 // 4. GET route ==> to render the profile page of the user.
 router.get("/user-profile", (req, res) => {
-  res.render("users/user-profile");
+  res.render("users/user-profile", { user: req.session.user });
+});
+
+// 5. GET route ==> to render the login form to user
+router.get("/login", (req, res) => res.render("auth/login"));
+
+// 6. POST route ==> to process form data (don't forget to compare with bcrypt ;{ )
+router.post("/login", (req, res, next) => {
+  console.log("SESSION =====> ", req.session);
+  // get the data from login form
+  const { email, password } = req.body;
+
+  // Validate that incoming data is not empty.
+  if (!email || !password) {
+    res.render("auth/login", {
+      email,
+      errorMessage:
+        "All fields are mandatory. Please provide your email and password.",
+    });
+    return;
+  }
+
+  // find user and send correct response
+  User.findOne({ email })
+    .then((user) => {
+      // check if found user was an object or null
+      if (!user) {
+        res.render("auth/login", {
+          email,
+          errorMessage: "Email is not registered. Try with other email.",
+        });
+        return;
+      } else if (bcrypt.compareSync(password, user.passwordHash)) {
+        //res.render("users/user-profile", { user });
+
+        // Adding user to session so we can have an eye.
+        // redirect to the route for the profile
+        req.session.user = user;
+        res.redirect("/user-profile");
+      } else {
+        res.render("auth/login", {
+          email,
+          errorMessage: "Incorrect password",
+        });
+      }
+    })
+    .catch((error) => next(error));
+});
+
+// 7. POST
+router.post("/logout", (req, res) => {
+  req.session.destroy();
+  res.redirect("/");
 });
 
 module.exports = router;
