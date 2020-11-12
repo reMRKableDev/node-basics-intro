@@ -27,7 +27,7 @@ router.post("/signup", (req, res, next) => {
   const emailFormatRegex = /^\S+@\S+\.\S+$/;
 
   if (!emailFormatRegex.test(email)) {
-    res.render("auth/signup", {
+    res.status(500).render("auth/signup", {
       email,
       username,
       validationError: "Please use a valid email address.",
@@ -56,7 +56,10 @@ router.post("/signup", (req, res, next) => {
     .then((hashedPassword) =>
       User.create({ username, email, passwordHash: hashedPassword })
         .then((newUser) => {
-          console.log(newUser);
+          // add user to session.
+          req.session.user = newUser;
+
+          // redirect to user profile.
           res.redirect("/user-profile");
         })
         .catch((error) => {
@@ -134,8 +137,14 @@ router.post("/login", (req, res, next) => {
 
 // 7. POST
 router.post("/logout", (req, res) => {
+  // Alternative 1 for logging out
   req.session.destroy();
   res.redirect("/");
+
+  // Alternative 2 for logging out
+  /* req.session.destroy(() => {
+    res.redirect("/");
+  }); */
 });
 
 module.exports = router;
