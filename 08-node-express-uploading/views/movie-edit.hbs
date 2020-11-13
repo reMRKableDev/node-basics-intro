@@ -1,0 +1,28 @@
+{{!-- views/movie-edit.hbs --}}
+
+<h2>Update movie</h2>
+<div class="row">
+  <div class="col-md-6">
+    <form action="/movies/{{_id}}/edit" method="post" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="title-input">Title:</label>
+        <input type="text" name="title" id="title-input" class="form-control" value="{{title}}" />
+      </div>
+
+      <div class="form-group">
+        <label for="description-input">Description:</label>
+        <textarea name="description" id="description-input" cols="30" rows="4" class="form-control">{{description}}
+        </textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="image-input">Image:</label>
+        <input type="file" name="image" id="image-input" class="form-control-file" />
+        <input type="text" name="existingImage" hidden id="" value="{{imageUrl}}">
+      </div>
+
+      <button type="submit" class="btn btn-success">Save changes</button>
+
+    </form>
+  </div>
+</div>
