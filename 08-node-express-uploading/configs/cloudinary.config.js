@@ -1,4 +1,4 @@
-const cloudinary = require("cloudinary"); // No need to use .v2 here --> bad documentation on cloudinary's part
+const cloudinary = require("cloudinary").v2;
 const { CloudinaryStorage } = require("multer-storage-cloudinary");
 const multer = require("multer");
 

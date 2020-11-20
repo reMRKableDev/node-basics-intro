@@ -36,7 +36,7 @@ router.get("/movies/create", (req, res) => res.render("movie-create"));
 router.post("/movies/create", fileUploader.single("image"), (req, res) => {
   const { title, description } = req.body;
   const { path } = req.file; // The path after an image is uploaded to Cloudinary. Check clg below
-  // console.log(req.file.path)
+  console.log("From Path", req.file);
 
   Movie.create({ title, description, imageUrl: path })
     .then(() => res.redirect("/movies"))
