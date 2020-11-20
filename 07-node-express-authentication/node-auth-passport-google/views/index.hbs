@@ -1,0 +1,9 @@
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+
+{{#unless user}}
+Home page
+<div>
+    <a href="/auth/google">Login With Google</a>
+</div>
+{{/unless}}
