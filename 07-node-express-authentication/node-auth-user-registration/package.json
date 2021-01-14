@@ -17,7 +17,7 @@
     "express-session": "1.17.1",
     "hbs": "4.1.1",
     "http-errors": "1.8.0",
-    "mongoose": "5.11.11",
+    "mongoose": "5.11.12",
     "morgan": "1.10.0",
     "serve-favicon": "2.5.0"
   },
