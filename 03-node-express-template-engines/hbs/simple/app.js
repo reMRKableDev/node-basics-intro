@@ -1,4 +1,3 @@
-// Importing packages that are to be used in the app
 const express = require("express");
 const hbs = require("hbs");
 const path = require("path");
@@ -6,17 +5,13 @@ const path = require("path");
 const port = 5000;
 const app = express();
 
-// Making sure our app can use partials
 hbs.registerPartials(__dirname + "/views/partials");
 
-// Setting view engine for our application
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "views"));
 
-// Makes public folder accessible throughout the application
 app.use(express.static("public"));
 
-// Routes for our application
 app.get("/", (req, res) => {
   res.render("index");
 });

@@ -1,3 +1,8 @@
+.card {
+  border: 2px solid orange !important;
+  margin: 30px;
+}
+
 .card img {
   height: 200px;
   object-fit: cover;
