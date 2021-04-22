@@ -86,6 +86,7 @@ router.post("/signup", (req, res, next) => {
 
 // 4. GET route ==> to render the profile page of the user.
 router.get("/user-profile", (req, res) => {
+  console.log(req.session);
   res.render("users/user-profile", { user: req.session.user });
 });
 
@@ -119,8 +120,6 @@ router.post("/login", (req, res, next) => {
         });
         return;
       } else if (bcrypt.compareSync(password, user.passwordHash)) {
-        //res.render("users/user-profile", { user });
-
         // Adding user to session so we can have an eye.
         // redirect to the route for the profile
         req.session.user = user;
@@ -137,14 +136,9 @@ router.post("/login", (req, res, next) => {
 
 // 7. POST
 router.post("/logout", (req, res) => {
-  // Alternative 1 for logging out
-  req.session.destroy();
-  res.redirect("/");
-
-  // Alternative 2 for logging out
-  /* req.session.destroy(() => {
+  req.session.destroy(() => {
     res.redirect("/");
-  }); */
+  });
 });
 
 module.exports = router;
