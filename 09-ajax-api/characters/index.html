@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <title>Axios POST, PUT and DELETE demo - Movie Characters API</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Axios CRUD demo - Movie Characters API</h1>
+      <hr />
+      <div class="row">
+        <!-- Display list of characters -->
+        <div class="col-md-6">
+          <h2>Characters List</h2>
+          <ul id="characters-list" class="list-group list-group-flush"></ul>
+        </div>
+
+        <!-- Create a new character -->
+        <!-- index.html -->
+        <!-- nothing gets changed except that you should add the following code: -->
+
+        <!-- Create a new character -->
+        <div class="col-md-6">
+          <h2>Add a new character</h2>
+          <form action="#" method="POST" id="new-character-form">
+            <div class="form-group">
+              <label for="name-input"> Name: </label>
+              <input
+                type="text"
+                name="name"
+                id="name-input"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <label for="occupation-input"> Occupation: </label>
+              <input
+                type="text"
+                name="occupation"
+                id="occupation-input"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <label for="weapon-input"> Weapon: </label>
+              <input
+                type="text"
+                name="weapon"
+                id="weapon-input"
+                class="form-control"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">
+              Create a new character
+            </button>
+          </form>
+        </div>
+        <!-- the rest stays the same -->
+
+        <!-- Update existing character -->
+        <hr />
+        <div class="row">
+          <!-- <div class="col-md-6"></div>
+          <div class="col-md-6"> -->
+          <div id="update-form-div" style="display: none">
+            <h3 id="update-char">Update form</h3>
+            <form action="#" method="POST" id="update-character-form">
+              <div class="form-group">
+                <label for="update-name-input"> Name: </label>
+                <input
+                  type="text"
+                  name="name"
+                  id="update-name-input"
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group">
+                <label for="update-occupation-input"> Occupation: </label>
+                <input
+                  type="text"
+                  name="occupation"
+                  id="update-occupation-input"
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group">
+                <label for="update-weapon-input"> Weapon: </label>
+                <input
+                  type="text"
+                  name="weapon"
+                  id="update-weapon-input"
+                  class="form-control"
+                />
+              </div>
+              <input
+                type="hidden"
+                name="character-id"
+                id="char-id"
+                hidden
+                value=""
+              />
+              <button type="submit" class="btn btn-primary">
+                Save changes
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
