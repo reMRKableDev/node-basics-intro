@@ -46,7 +46,7 @@ passport.deserializeUser((id, callback) => {
 });
 
 // Passport LocalStrategy
-passport.use(
+/* passport.use(
   new LocalStrategy(
     {
       usernameField: "username", // by default
@@ -68,7 +68,7 @@ passport.use(
         .catch((err) => done(err));
     }
   )
-);
+); */
 
 // Express View engine setup
 
