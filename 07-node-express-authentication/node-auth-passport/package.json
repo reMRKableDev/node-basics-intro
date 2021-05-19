@@ -14,7 +14,7 @@
     "cookie-parser": "1.4.5",
     "dotenv": "9.0.2",
     "express": "4.17.1",
-    "express-session": "1.17.1",
+    "express-session": "1.17.2",
     "hbs": "4.1.2",
     "mongoose": "5.12.10",
     "morgan": "1.10.0",
