@@ -17,7 +17,7 @@
     "express": "4.17.1",
     "express-session": "1.17.2",
     "hbs": "4.1.2",
-    "mongoose": "5.12.12",
+    "mongoose": "5.12.13",
     "morgan": "1.10.0",
     "node-sass-middleware": "0.11.0",
     "passport": "0.4.1",
