@@ -16,7 +16,7 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
-    "jest": "27.0.1",
+    "jest": "27.0.4",
     "supertest": "6.1.3"
   }
 }
