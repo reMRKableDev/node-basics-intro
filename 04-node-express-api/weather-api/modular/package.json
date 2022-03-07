@@ -12,10 +12,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.24.0",
+    "axios": "^0.26.0",
     "cities.json": "^1.1.5",
-    "express": "^4.17.1",
-    "hbs": "^4.1.1",
+    "express": "^4.17.3",
+    "hbs": "^4.2.0",
     "morgan": "^1.10.0"
   }
 }
