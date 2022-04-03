@@ -17,12 +17,12 @@
     "express-session": "1.17.2",
     "hbs": "4.2.0",
     "http-errors": "2.0.0",
-    "mongoose": "6.2.5",
+    "mongoose": "6.2.9",
     "morgan": "1.10.0",
     "serve-favicon": "2.5.0"
   },
   "devDependencies": {
-    "debug": "4.3.3",
+    "debug": "4.3.4",
     "nodemon": "2.0.15"
   }
 }
