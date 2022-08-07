@@ -13,7 +13,7 @@ const app = http.createServer((request, response) => {
     response.writeHead(200);
     response.end("Nicely done!");
   } else {
-    response.writeHead(200);
+    response.writeHead(404);
     response.write(JSON.stringify({ error: "server error" }));
     response.end();
   }
