@@ -4,7 +4,7 @@ const axios = require("axios"); // make calls to external APIs
 const morgan = require("morgan"); // logger, show on the terminal which route was recently called
 const express = require("express"); // used to make express server + application
 const app = express();
-const PORT = 5000;
+const PORT = 8000;
 require("dotenv").config(); // Loads the values from .env file to process.env
 
 hbs.registerPartials(__dirname + "/views/partials");
