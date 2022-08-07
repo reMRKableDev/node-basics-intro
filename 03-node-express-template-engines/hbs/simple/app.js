@@ -7,7 +7,7 @@ const port = 4000;
 const app = express();
 
 // Making sure our app can use partials
-hbs.registerPartials(__dirname + "/views/partials");
+hbs.registerPartials(__dirname + "/views/partials", (err) => console.log(err));
 
 // Setting view engine for our application
 app.set("view engine", "hbs");

@@ -1,6 +1,6 @@
-const circleCalculations = require("./circleCalculations");
+const circleCalculations = require("./circleCalculations"); // {PI, calculateArea, calculateCircumference}
 
-const radius = 3;
+const radius = circleCalculations.PI;
 const areaResults = circleCalculations.calculateArea(radius);
 const circumferenceResults = circleCalculations.calculateCircumference(radius);
 
