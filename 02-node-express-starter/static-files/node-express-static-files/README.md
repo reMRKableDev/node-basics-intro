@@ -2,7 +2,7 @@
 
 This guide looks at passing static assets over a server created using [Express.js](https://expressjs.com/).
 
-![static-banner](static-banner.png)
+![static-banner](assets/static-banner.png)
 
 ## Getting Started 🏁
 
