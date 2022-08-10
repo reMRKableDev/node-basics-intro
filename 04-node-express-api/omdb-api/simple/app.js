@@ -23,11 +23,13 @@ app.get("/", (req, res) => {
 
 app.get("/searchResults", (req, res) => {
   // req.query --> Query String
-  const { movieName } = req.query; // --> const movieName = req.query.movieName
+  console.log('req.query',req.query)
+  const { movieName, movieDirector } = req.query; // --> const movieName = req.query.movieName
+  const lowercaseMovieName = movieName.toLowerCase();
 
   axios
     .get(
-      `http://www.omdbapi.com/?apikey=${process.env.OMDB_API_Key}&s=${movieName}`
+      `http://www.omdbapi.com/?apikey=${process.env.OMDB_API_Key}&s=${lowercaseMovieName}&page=1-2`
     )
     .then((OMDBResponse) => {
       const { Search, totalResults } = OMDBResponse.data;
