@@ -23,11 +23,11 @@ app.get("/", (req, res) => {
 
 app.get("/searchResults", (req, res) => {
   // req.query --> Query String
-  const { movieName } = req.query;
+  const { movieName } = req.query; // --> const movieName = req.query.movieName
 
   axios
     .get(
-      `http://www.omdbapi.com/?apikey=${process.env.OMDB_API_Key}&s=${movieName}&page=1-2`
+      `http://www.omdbapi.com/?apikey=${process.env.OMDB_API_Key}&s=${movieName}`
     )
     .then((OMDBResponse) => {
       const { Search, totalResults } = OMDBResponse.data;

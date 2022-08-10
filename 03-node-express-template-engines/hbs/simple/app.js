@@ -18,11 +18,11 @@ app.use(express.static("public"));
 
 // Routes for our application
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("index", {firstName: "lloyd", lastName: "chambrier"});
 });
 
 app.get("/players", (req, res) => {
-  const players = [
+  const playersArray = [
     {
       name: "Rusell",
       lastName: "Westbrook",
@@ -100,7 +100,7 @@ app.get("/players", (req, res) => {
     },
   ];
 
-  res.render("players", { players });
+  res.render("players", { playersArray });
 });
 
 app.get("/teams", (req, res) => {
