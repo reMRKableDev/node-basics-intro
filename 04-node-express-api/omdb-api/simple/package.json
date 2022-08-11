@@ -11,11 +11,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.26.1",
-    "dotenv": "^16.0.0",
-    "express": "^4.17.3",
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
     "hbs": "^4.2.0",
-    "mongoose": "^6.2.9",
+    "mongoose": "^6.5.2",
     "morgan": "^1.10.0"
   }
 }
