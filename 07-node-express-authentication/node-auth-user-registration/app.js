@@ -19,6 +19,9 @@ app.set("view engine", "hbs");
 // Include session to application
 require("./configs/sessions.config")(app);
 
+/* const sessionConnect = require("./configs/sessions.config");
+sessionConnect(app); */
+
 app.use(express.static(path.join(__dirname, "public")));
 app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
 app.use(logger("dev"));

@@ -1,34 +1,15 @@
 require("dotenv").config();
 
-const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const express = require("express");
 const favicon = require("serve-favicon");
-const hbs = require("hbs");
-const mongoose = require("mongoose");
 const logger = require("morgan");
 const path = require("path");
 
-const session = require("express-session");
-const MongoStore = require("connect-mongo")(session);
 const bcrypt = require("bcrypt");
 const passport = require("passport");
 const User = require("./models/User.model");
 const LocalStrategy = require("passport-local").Strategy;
-
-mongoose
-  .connect("mongodb://localhost/node-authentication-passport", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then((x) => {
-    console.log(
-      `Connected to Mongo! Database name: "${x.connections[0].name}"`
-    );
-  })
-  .catch((err) => {
-    console.error("Error connecting to mongo", err);
-  });
 
 const app_name = require("./package.json").name;
 const debug = require("debug")(
@@ -37,21 +18,17 @@ const debug = require("debug")(
 
 const app = express();
 
+// database config
+require("./configs/db.config");
+
+// session config
+require("./configs/session.config")(app);
+
 // Middleware Setup
 app.use(logger("dev"));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-
-// Middleware for passport
-app.use(
-  session({
-    secret: process.env.SESS_SECRET,
-    store: new MongoStore({ mongooseConnection: mongoose.connection }),
-    resave: true,
-    saveUninitialized: true,
-  })
-);
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -69,7 +46,7 @@ passport.deserializeUser((id, callback) => {
 });
 
 // Passport LocalStrategy
-passport.use(
+/* passport.use(
   new LocalStrategy(
     {
       usernameField: "username", // by default
@@ -91,7 +68,7 @@ passport.use(
         .catch((err) => done(err));
     }
   )
-);
+); */
 
 // Express View engine setup
 

@@ -1,0 +1,25 @@
+{{!-- views/movie-create.hbs --}}
+
+<h2>Create a movie</h2>
+<div class="row">
+  <div class="col-md-6">
+    <form action="/movies/create" method="post" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="title-input">Title:</label>
+        <input type="text" name="title" id="title-input" class="form-control" />
+      </div>
+
+      <div class="form-group">
+        <label for="description-input">Description:</label>
+        <textarea name="description" id="description-input" cols="30" rows="4" class="form-control"> </textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="image-input">Image:</label>
+        <input type="file" name="image" id="image-input" class="form-control-file" />
+      </div>
+
+      <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+  </div>
+</div>
