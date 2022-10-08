@@ -14,7 +14,7 @@
     "connect-mongo": "4.6.0",
     "cookie-parser": "1.4.6",
     "dotenv": "16.0.1",
-    "express": "4.18.1",
+    "express": "4.18.2",
     "express-session": "1.17.3",
     "hbs": "4.2.0",
     "mongoose": "6.5.2",
