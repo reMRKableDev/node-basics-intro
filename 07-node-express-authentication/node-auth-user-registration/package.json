@@ -9,7 +9,7 @@
     "dev-windows": "nodemon ./bin/www"
   },
   "dependencies": {
-    "bcrypt": "5.0.1",
+    "bcrypt": "5.1.0",
     "connect-mongo": "4.6.0",
     "cookie-parser": "1.4.6",
     "dotenv": "16.0.1",
@@ -17,12 +17,12 @@
     "express-session": "1.17.3",
     "hbs": "4.2.0",
     "http-errors": "2.0.0",
-    "mongoose": "6.5.2",
+    "mongoose": "6.6.5",
     "morgan": "1.10.0",
     "serve-favicon": "2.5.0"
   },
   "devDependencies": {
     "debug": "4.3.4",
-    "nodemon": "2.0.19"
+    "nodemon": "2.0.20"
   }
 }
