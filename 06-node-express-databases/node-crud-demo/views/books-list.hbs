@@ -1,9 +1,10 @@
 <h1>Books</h1>
 <hr>
 
-{{#each allTheBooksFromDB}}
+{{#each books}}
 <div>
   <h3>{{title}}</h3>
+  <p>{{description}}</p>
   <p>By: {{author}}</p>
   <a href="/books/{{_id}}">See details</a>
   <a href="/books/{{_id}}/edit">Edit</a>

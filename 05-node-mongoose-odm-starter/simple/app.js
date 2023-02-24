@@ -20,7 +20,7 @@ const Cat = model("Cats", catSchema);
 
 // Mongoose db connection
 mongoose
-  .connect("mongodb://localhost/mongoose-intro", {
+  .connect("mongodb://localhost/test-database", {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
@@ -34,7 +34,7 @@ mongoose
 
 // object
 const catObj = {
-  name: "Johnny",
+  name: "Bella",
   breed: "Bengal",
   age: 6,
   color: "Orange/Black",
@@ -65,7 +65,7 @@ const createMultipleCatObjects = () =>
     .then((results) => console.log(`Saved new cats: ${results}`))
     .catch((saveErr) => console.error(`Save failed: ${saveErr}`));
 
-// createMultipleCatObjects();
+createMultipleCatObjects();
 
 /* READ */
 const findAllSavedCatData = () =>
@@ -77,15 +77,15 @@ const findAllSavedCatData = () =>
 
 /* UPDATE */
 const updateOneSavedCatData = () =>
-  Cat.updateOne({ name: "Garfield" }, { breed: "Ankara" })
+  Cat.updateOne({ name: "Sashimi" }, { breed: "Ankara" })
     .then(() => console.log(`Cat is updated`))
     .catch((saveErr) => console.error(`Save failed: ${saveErr}`));
 
-// updateOneSavedCatData
+// updateOneSavedCatData();
 
 /* DELETE */
 const deleteOneSavedCatData = () =>
-  Cat.deleteOne({ name: "Garfield" })
+  Cat.deleteOne({ name: "Sashimi" })
     .then(() => console.log(`Cat is deleted`))
     .catch((saveErr) => console.error(`Save failed: ${saveErr}`));
 

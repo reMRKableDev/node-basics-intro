@@ -2,9 +2,10 @@ const express = require("express");
 const hbs = require("hbs");
 const path = require("path");
 
-const port = 5000;
+const port = 4000;
 const app = express();
 
+// Making sure our app can use partials
 hbs.registerPartials(__dirname + "/views/partials");
 
 app.set("view engine", "hbs");
@@ -13,11 +14,11 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("index", {firstName: "lloyd", lastName: "chambrier"});
 });
 
 app.get("/players", (req, res) => {
-  const players = [
+  const playersArray = [
     {
       name: "Rusell",
       lastName: "Westbrook",
@@ -53,7 +54,7 @@ app.get("/players", (req, res) => {
       lastName: "James",
       team: "CLE",
       photo:
-        "https://usatftw.files.wordpress.com/2018/01/ap_cavaliers_timberwolves_basketball.jpg?w=1000&h=600&crop=1",
+        "https://pyxis.nymag.com/v1/imgs/847/0f7/504c63a03d8a751a5cbeda0bc064306bb4-lebron-james.rsquare.w700.jpg",
       average: [
         { year: 2013, points: 78 },
         { year: 2014, points: 82 },
@@ -95,7 +96,7 @@ app.get("/players", (req, res) => {
     },
   ];
 
-  res.render("players", { players });
+  res.render("players", { playersArray });
 });
 
 app.get("/teams", (req, res) => {

@@ -11,10 +11,10 @@ const app = express();
 // Static files
 app.use(express.static("public"));
 
-hbs.registerPartials(__dirname + "/views/partials");
+hbs.registerPartials(__dirname + "../../views/partials");
 
 app.set("view engine", "hbs");
-app.set("views", path.join(__dirname, "views"));
+app.set("views", path.join(__dirname, "../views"));
 
 // Setting to use routes
 app.use("/", homeRouter);

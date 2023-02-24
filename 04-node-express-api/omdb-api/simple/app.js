@@ -4,7 +4,7 @@ const axios = require("axios"); // make calls to external APIs
 const morgan = require("morgan"); // logger, show on the terminal which route was recently called
 const express = require("express"); // used to make express server + application
 const app = express();
-const PORT = 5000;
+const PORT = 8000;
 require("dotenv").config(); // Loads the values from .env file to process.env
 
 hbs.registerPartials(__dirname + "/views/partials");
@@ -23,11 +23,13 @@ app.get("/", (req, res) => {
 
 app.get("/searchResults", (req, res) => {
   // req.query --> Query String
-  const { movieName } = req.query;
+  console.log('req.query',req.query)
+  const { movieName, movieDirector } = req.query; // --> const movieName = req.query.movieName
+  const lowercaseMovieName = movieName.toLowerCase();
 
   axios
     .get(
-      `http://www.omdbapi.com/?apikey=${process.env.OMDB_API_Key}&s=${movieName}&page=1-2`
+      `http://www.omdbapi.com/?apikey=${process.env.OMDB_API_Key}&s=${lowercaseMovieName}&page=1-2`
     )
     .then((OMDBResponse) => {
       const { Search, totalResults } = OMDBResponse.data;
