@@ -1,6 +1,6 @@
 # Node Basics Intro 🚀🚀🚀
 
-[![CodeFactor](https://www.codefactor.io/repository/github/remrkabledev/node-basics-intro/badge/master)](https://www.codefactor.io/repository/github/remrkabledev/node-basics-intro/overview/master) [![Renovate](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com)
+[![CodeFactor](https://www.codefactor.io/repository/github/remrkabledev/node-basics-intro/badge/main)](https://www.codefactor.io/repository/github/remrkabledev/node-basics-intro/overview/main) [![Renovate](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com)
 
 This repo holds small node projects that introduce concepts, practices and techniques used with Node.js
 
@@ -71,7 +71,7 @@ Please note that there is a code of conduct, please follow it in all your intera
 ## Authors 💻
 
 - **Malcolm R. Kente** - _Initial work_ - [reMRKable Dev](https://remrkabledev.com/)
-- **Lloyd Chambrier** - developed ```node-api-requests``` & ```node-omdb-api``` repo found in``` node-express-api``` folder - [LloydC](https://github.com/LloydC)
+- **Lloyd Chambrier** - developed `node-api-requests` & `node-omdb-api` repo found in` node-express-api` folder - [LloydC](https://github.com/LloydC)
 
 ## Acknowledgments 🗣️
 
