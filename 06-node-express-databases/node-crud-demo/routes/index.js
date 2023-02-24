@@ -19,13 +19,7 @@ router.get("/books/create", renderCreateBookViewController);
 router.post("/books/create", createNewBookController);
 
 // Read all the books from the db
-router.get("/", (req, res) => {
-  Book.find()
-    .then((allTheBooksFromDB) =>
-      res.render("books-list", { allTheBooksFromDB })
-    )
-    .catch((error) => `Error while fetching all books: ${error}`);
-});
+router.get("/", findAllBooksController);
 
 // Read one book from the db
 router.get("/books/:id", findOneBookController);
