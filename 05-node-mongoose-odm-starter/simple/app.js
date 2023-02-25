@@ -3,7 +3,16 @@ const catsData = require("./cats.json");
 const { Schema, model } = mongoose;
 
 /* DATA MODELING */
-// Schema
+/**
+ * @name Cat
+ * @type {Object}
+ * @property {String} name - required
+ * @property {String} breed
+ * @property {Number} age
+ * @property {String} color
+ * @property {Boolean} hasLegs
+ */
+
 const catSchema = new Schema(
   {
     name: { type: String, required: true },
@@ -15,10 +24,21 @@ const catSchema = new Schema(
   { timestamps: true }
 );
 
-// Model
+/**
+ * @name Cat
+ * @type {Object}
+ */
 const Cat = model("Cats", catSchema);
 
-// Mongoose db connection
+/* DATABASE CONNECTION */
+/**
+ * @name connectDB
+ * @type {Function}
+ * @returns {Promise}
+ * @description Connects to the db
+ * @see https://mongoosejs.com/docs/connections.html
+ * @see https://mongoosejs.com/docs/api.html#mongoose_Mongoose-connect
+ */
 mongoose
   .connect("mongodb://localhost/test-database", {
     useNewUrlParser: true,
@@ -32,7 +52,15 @@ mongoose
     console.error(`Error while connecting to db: ${connectErr}`)
   );
 
-// object
+/**
+ * @name catObj
+ * @type {Object}
+ * @property {String} name - required
+ * @property {String} breed
+ * @property {Number} age
+ * @property {String} color
+ * @property {Boolean} hasLegs
+ */
 const catObj = {
   name: "Bella",
   breed: "Bengal",
@@ -41,7 +69,16 @@ const catObj = {
   hasLegs: true,
 };
 
-/* CREATE */
+/* CRUD OPERATIONS */
+/**
+ * @name saveSingleCatObjectUsingInstanceOfModel
+ * @type {Function}
+ * @returns {Promise} - resolves to a saved cat object
+ *
+ * @description Saves a single cat object using an instance of the model - CREATE
+ *
+ * @see https://mongoosejs.com/docs/api.html#document_Document-save
+ */
 const saveSingleCatObjectUsingInstanceOfModel = () => {
   const kitty = new Cat(catObj);
 
@@ -51,15 +88,33 @@ const saveSingleCatObjectUsingInstanceOfModel = () => {
     .catch((saveErr) => console.error(`Save failed: ${saveErr}`));
 };
 
-// saveSingleCatObjectUsingInstanceOfModel();
+saveSingleCatObjectUsingInstanceOfModel();
 
+/**
+ * @name createSingleCatObjectUsingModel
+ * @type {Function}
+ * @returns {Promise} - resolves to a saved cat object
+ *
+ * @description Saves a single cat object using the model - CREATE
+ *
+ * @see https://mongoosejs.com/docs/api.html#model_Model.create
+ */
 const createSingleCatObjectUsingModel = () =>
   Cat.create(catObj)
     .then((results) => console.log(`Saved new cat: ${results}`))
     .catch((saveErr) => console.error(`Save failed: ${saveErr}`));
 
-// createSingleCatObjectUsingModel()
+createSingleCatObjectUsingModel();
 
+/**
+ * @name createMultipleCatObjects
+ * @type {Function}
+ * @returns {Promise} - resolves to an array of saved cat objects
+ *
+ * @description Saves multiple cat objects using the model - CREATE
+ *
+ * @see https://mongoosejs.com/docs/api.html#model_Model.insertMany
+ */
 const createMultipleCatObjects = () =>
   Cat.insertMany(catsData)
     .then((results) => console.log(`Saved new cats: ${results}`))
@@ -67,29 +122,53 @@ const createMultipleCatObjects = () =>
 
 createMultipleCatObjects();
 
-/* READ */
+/**
+ * @name findAllSavedCatData
+ * @type {Function}
+ * @returns {Promise} - resolves to an array of saved cat objects
+ *
+ * @description Finds all saved cat data - READ
+ *
+ * @see https://mongoosejs.com/docs/api.html#model_Model.find
+ */
 const findAllSavedCatData = () =>
   Cat.find({})
     .then((results) => console.log(`Found cats: ${results}`))
     .catch((saveErr) => console.error(`Save failed: ${saveErr}`));
 
-// findAllSavedCatData();
+findAllSavedCatData();
 
-/* UPDATE */
+/**
+ * @name updateOneSavedCatData
+ * @type {Function}
+ * @returns {Promise} - resolves to an array of saved cat objects
+ *
+ * @description Updates one saved cat data - UPDATE
+ *
+ * @see https://mongoosejs.com/docs/api.html#model_Model.updateOne
+ */
 const updateOneSavedCatData = () =>
   Cat.updateOne({ name: "Sashimi" }, { breed: "Ankara" })
     .then(() => console.log(`Cat is updated`))
     .catch((saveErr) => console.error(`Save failed: ${saveErr}`));
 
-// updateOneSavedCatData();
+updateOneSavedCatData();
 
-/* DELETE */
+/**
+ * @name deleteOneSavedCatData
+ * @type {Function}
+ * @returns {Promise} - resolves to an array of saved cat objects
+ *
+ * @description Deletes one saved cat data - DELETE
+ *
+ * @see https://mongoosejs.com/docs/api.html#model_Model.deleteOne
+ */
 const deleteOneSavedCatData = () =>
   Cat.deleteOne({ name: "Sashimi" })
     .then(() => console.log(`Cat is deleted`))
     .catch((saveErr) => console.error(`Save failed: ${saveErr}`));
 
-// deleteOneSavedCatData()
+deleteOneSavedCatData();
 
 process.on("SIGINT", () => {
   mongoose.connection.close(() => {

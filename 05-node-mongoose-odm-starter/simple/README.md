@@ -42,7 +42,9 @@ This should retrieve all the necessary dependencies named in the `package.json` 
 
 ### How To Use:
 
-Once dependencies are installed, navigate to the ```app.js``` file and uncomment any of the functions you want to run.
+Once dependencies are installed, navigate to the ```app.js``` file. 
+
+All functions are available to use, comment out the ones you don't need to test and run.
 
 Once that is done, the project can be run using:
 
