@@ -4,7 +4,7 @@ require("dotenv").config();
  * @name app
  * @type {Object}
  *
- * @description The express app
+ * @description The express app object is exported from the app.js file
  */
 const app = require("./app");
 

@@ -1,9 +1,37 @@
-const express = require("express"); // loading package express
+/**
+ * @module routes/home.routes
+ * @description The routes for the home page.
+ * @requires express
+ */
 
-const { readIndexHtml } = require("../controllers/home.controllers"); // loading logic for routing
+const express = require("express");
 
-const router = express.Router(); // creating a Router object
+/**
+ * @name readIndexHtml
+ * @type {Function}
+ * @description The callback function to be executed when the router handles the GET request
+ */
+const { readIndexHtml } = require("../controllers/home.controllers");
 
-router.get("/", readIndexHtml); // defining what happens if we receive a get request at  '/' endpoint
+/**
+ * @name router
+ * @type {Object}
+ * @description The express router
+ *
+ * @see https://expressjs.com/en/4x/api.html#router
+ */
+const router = express.Router();
 
-module.exports = router; // exporting the router
+/**
+ * @name router.get
+ * @type {Function}
+ * @param {String} path - The path on which the router handles the GET request
+ * @param {Function} callback - The callback function to be executed when the router handles the GET request
+ *
+ * @description The router handles the GET request to the path and any sub-paths
+ *
+ * @see https://expressjs.com/en/4x/api.html#router.get
+ */
+router.get("/", readIndexHtml);
+
+module.exports = router;
