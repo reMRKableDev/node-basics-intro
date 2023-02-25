@@ -30,6 +30,10 @@ const catSchema = new Schema(
  */
 const Cat = model("Cats", catSchema);
 
+/* ************************************************ */
+/* ************************************************ */
+/* ************************************************ */
+
 /* DATABASE CONNECTION */
 /**
  * @name connectDB
@@ -51,6 +55,10 @@ mongoose
   .catch((connectErr) =>
     console.error(`Error while connecting to db: ${connectErr}`)
   );
+
+/* ************************************************ */
+/* ************************************************ */
+/* ************************************************ */
 
 /**
  * @name catObj
@@ -90,6 +98,10 @@ const saveSingleCatObjectUsingInstanceOfModel = () => {
 
 saveSingleCatObjectUsingInstanceOfModel();
 
+/* ************************************************ */
+/* ************************************************ */
+/* ************************************************ */
+
 /**
  * @name createSingleCatObjectUsingModel
  * @type {Function}
@@ -105,6 +117,10 @@ const createSingleCatObjectUsingModel = () =>
     .catch((saveErr) => console.error(`Save failed: ${saveErr}`));
 
 createSingleCatObjectUsingModel();
+
+/* ************************************************ */
+/* ************************************************ */
+/* ************************************************ */
 
 /**
  * @name createMultipleCatObjects
@@ -122,6 +138,10 @@ const createMultipleCatObjects = () =>
 
 createMultipleCatObjects();
 
+/* ************************************************ */
+/* ************************************************ */
+/* ************************************************ */
+
 /**
  * @name findAllSavedCatData
  * @type {Function}
@@ -137,6 +157,10 @@ const findAllSavedCatData = () =>
     .catch((saveErr) => console.error(`Save failed: ${saveErr}`));
 
 findAllSavedCatData();
+
+/* ************************************************ */
+/* ************************************************ */
+/* ************************************************ */
 
 /**
  * @name updateOneSavedCatData
@@ -154,6 +178,10 @@ const updateOneSavedCatData = () =>
 
 updateOneSavedCatData();
 
+/* ************************************************ */
+/* ************************************************ */
+/* ************************************************ */
+
 /**
  * @name deleteOneSavedCatData
  * @type {Function}
@@ -169,6 +197,10 @@ const deleteOneSavedCatData = () =>
     .catch((saveErr) => console.error(`Save failed: ${saveErr}`));
 
 deleteOneSavedCatData();
+
+/* ************************************************ */
+/* ************************************************ */
+/* ************************************************ */
 
 process.on("SIGINT", () => {
   mongoose.connection.close(() => {

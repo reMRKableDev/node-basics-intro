@@ -1,9 +1,12 @@
-// GET USING AXIOS (Read)
+/**
+ * @function getCharacters
+ * @description - This function will get all the characters from the API and display them in the DOM
+ */
 const getCharacters = () => {
   axios
     .get("https://ih-crud-api.herokuapp.com/characters")
     .then((response) => {
-      const data = response.data;
+      const { data } = response;
 
       let str = "";
 
