@@ -44,8 +44,8 @@ app.use(express.static("public"));
  *
  * @see https://expressjs.com/en/4x/api.html#app.get
  */
-app.get("/home", (_, res) => sendFileHelper(res, "/views/index.html"));
-app.get("/cat", (_, res) => sendFileHelper(res, "/views/cat-page.html"));
+app.get("/home", (_req, res) => sendFileHelper(res, "/views/index.html"));
+app.get("/cat", (_req, res) => sendFileHelper(res, "/views/cat-page.html"));
 
 /**
  * @name app.listen

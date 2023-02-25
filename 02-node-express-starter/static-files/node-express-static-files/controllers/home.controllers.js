@@ -11,4 +11,4 @@
  * @param {Object} res - The response object
  * @returns {Object} res - The response object with the index.html file.
  */
-exports.readIndexHtml = (_, res) => res.status(200).sendFile("index.html");
+exports.readIndexHtml = (_req, res) => res.status(200).sendFile("index.html");

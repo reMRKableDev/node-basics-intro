@@ -23,8 +23,7 @@ const formElement =
  * @description The router handles the GET request to the path and any sub-paths
  * @see https://expressjs.com/en/4x/api.html#router.get
  */
-router.get("/", (_, res) => res.status(200).send(formElement));
-
+router.get("/", (_req, res) => res.status(200).send(formElement));
 
 /**
  * @name router.post
@@ -35,7 +34,7 @@ router.get("/", (_, res) => res.status(200).send(formElement));
  *  @has {Object} req.body - The body of the request object containing the email address
  * @param {Object} res - The response object
  * @returns {Object} res - The response object with the email address.
- * 
+ *
  * @description The router handles the POST request to the path and any sub-paths
  * @see https://expressjs.com/en/4x/api.html#router.post
  */

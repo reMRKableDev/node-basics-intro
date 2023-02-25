@@ -4,7 +4,7 @@ const router = Router();
 const { isPostValid } = require("../helpers/isPostValid.helper");
 const { myPosts } = require("../data/postData");
 
-router.get("/", (_, res) => res.status(200).send(myPosts));
+router.get("/", (_req, res) => res.status(200).send(myPosts));
 
 router.get("/:id", (req, res) => {
   const { id } = req.params;
@@ -23,7 +23,9 @@ router.post("/new", (req, res) => {
     myPosts.push(userInput);
     res.status(201).send(myPosts);
   } else {
-    res.status(400).json({ error: "Post isn't valid, please review and resubmit!" });
+    res
+      .status(400)
+      .json({ error: "Post isn't valid, please review and resubmit!" });
   }
 });
 

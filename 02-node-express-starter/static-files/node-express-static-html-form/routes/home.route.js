@@ -24,6 +24,6 @@ const newsletter =
  *
  * @see https://expressjs.com/en/4x/api.html#router.get
  */
-router.get("/", (_, res) => res.status(200).send(newsletter));
+router.get("/", (_req, res) => res.status(200).send(newsletter));
 
 module.exports = router;
