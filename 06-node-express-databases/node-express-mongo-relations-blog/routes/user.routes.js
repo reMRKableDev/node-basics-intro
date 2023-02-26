@@ -7,7 +7,7 @@ const User = require("../models/User.model");
 // GET route to display the form to "register" a user
 // ****************************************************************************************
 
-router.get("/user-create", (req, res) => res.render("users/create"));
+router.get("/user-create", (_req, res) => res.render("users/create"));
 
 // ****************************************************************************************
 // POST route to submit the form to create a user
@@ -35,7 +35,7 @@ router.post("/user-create", (req, res) => {
 // GET route to display all users from the DB
 // ****************************************************************************************
 
-router.get("/users", (req, res) => {
+router.get("/users", (_req, res) => {
   User.find() // <-- .find() method gives us always an ARRAY back
     .then((usersFromDB) => res.render("users/list", { users: usersFromDB }))
     .catch((err) =>
@@ -47,7 +47,7 @@ router.get("/users", (req, res) => {
 // GET details of a specific user (primarily their posts)
 // ****************************************************************************************
 
-router.get("/users/:userId/posts", (req, res) => {
+router.get("/users/:userId/posts", (req, _res) => {
   const { userId } = req.params;
 
   User.findById(userId)
