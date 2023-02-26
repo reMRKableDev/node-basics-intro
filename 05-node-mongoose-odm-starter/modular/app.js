@@ -13,16 +13,16 @@ connectDB();
 
 /* CREATE */
 saveSingleCatObjectUsingInstanceOfModel();
-// createSingleCatObjectUsingModel();
-// createMultipleCatObjects;
+createSingleCatObjectUsingModel();
+createMultipleCatObjects();
 
 /* READ */
 findAllSavedCatData();
 
 /* UPDATE */
-//updateOneSavedCatData();
+updateOneSavedCatData();
 
 /* DELETE */
-//deleteOneSavedCatData();
+deleteOneSavedCatData();
 
 disconnectDB();

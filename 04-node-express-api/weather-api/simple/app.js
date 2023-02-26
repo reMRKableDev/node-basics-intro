@@ -1,6 +1,5 @@
 const express = require("express");
 const axios = require("axios");
-const hbs = require("hbs");
 const path = require("path");
 const morgan = require("morgan");
 const cities = require("cities.json");
@@ -15,7 +14,7 @@ app.set("views", path.join(__dirname, "./views"));
 app.use(express.static("public"));
 app.use(morgan("dev"));
 
-app.get("/", (req, res) => {
+app.get("/", (_req, res) => {
   // sort cities alphabetically
   const sortedCities = cities.sort(function (a, b) {
     if (a.name < b.name) {
