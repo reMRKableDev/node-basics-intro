@@ -4,14 +4,14 @@ const {
   querySuccess,
   queryObjectSuccess,
   reqBody,
-  reqParams
+  reqParams,
 } = require("../helpers/routeHelpers");
 
 const {
   selectString,
   insertString,
   updateString,
-  deleteString
+  deleteString,
 } = require("../helpers/queryStringHelpers");
 
 /* CONTROLLERS */
@@ -19,7 +19,7 @@ module.exports = {
   createUsers: (req, res) => {
     const userData = reqBody(req);
 
-    connection.query(insertString, userData, (err, _) =>
+    connection.query(insertString, userData, (err, _results) =>
       err ? queryFailed(res, err) : querySuccess(res)
     );
   },
@@ -34,7 +34,7 @@ module.exports = {
     const userId = reqParams(req);
     const userData = reqBody(req);
 
-    connection.query(updateString, [userData, userId], (err, _) =>
+    connection.query(updateString, [userData, userId], (err, _results) =>
       err ? queryFailed(res, err) : querySuccess(res)
     );
   },
@@ -42,8 +42,8 @@ module.exports = {
   deleteUsers: (req, res) => {
     const userId = reqParams(req);
 
-    connection.query(deleteString, [userId], (err, _) =>
+    connection.query(deleteString, [userId], (err, _results) =>
       err ? queryFailed(res, err) : querySuccess(res)
     );
-  }
+  },
 };

@@ -17,14 +17,14 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true })); // get form data from the client to the server
 app.use(morgan("dev"));
 
-app.get("/", (req, res) => {
+app.get("/", (_req, res) => {
   res.render("index");
 });
 
 app.get("/searchResults", (req, res) => {
   // req.query --> Query String
-  console.log('req.query',req.query)
-  const { movieName, movieDirector } = req.query; // --> const movieName = req.query.movieName
+  console.log("req.query", req.query);
+  const { movieName } = req.query; // --> const movieName = req.query.movieName
   const lowercaseMovieName = movieName.toLowerCase();
 
   axios
@@ -59,7 +59,7 @@ app.get("/movie/:movieId", (req, res) => {
 app.post("/searchResults", (req, res) => {
   const { movieName } = req.body;
 
-    axios
+  axios
     .get(
       `http://www.omdbapi.com/?apikey=${process.env.OMDB_API_Key}&s=${movieName}&page=10`
     )

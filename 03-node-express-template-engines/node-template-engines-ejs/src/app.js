@@ -1,6 +1,5 @@
 // Import necessary packages and set up global variables
 const express = require("express");
-const path = require("path");
 const app = express();
 
 // Routes import
