@@ -19,7 +19,7 @@ module.exports = {
   createUsers: (req, res) => {
     const userData = reqBody(req);
 
-    connection.query(insertString, userData, (err, _results) =>
+    connection.query(insertString, userData, (err) =>
       err ? queryFailed(res, err) : querySuccess(res)
     );
   },
@@ -34,7 +34,7 @@ module.exports = {
     const userId = reqParams(req);
     const userData = reqBody(req);
 
-    connection.query(updateString, [userData, userId], (err, _results) =>
+    connection.query(updateString, [userData, userId], (err) =>
       err ? queryFailed(res, err) : querySuccess(res)
     );
   },
@@ -42,7 +42,7 @@ module.exports = {
   deleteUsers: (req, res) => {
     const userId = reqParams(req);
 
-    connection.query(deleteString, [userId], (err, _results) =>
+    connection.query(deleteString, [userId], (err) =>
       err ? queryFailed(res, err) : querySuccess(res)
     );
   },
