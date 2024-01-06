@@ -16,7 +16,7 @@
     "hbs": "4.2.0",
     "mongoose": "7.6.7",
     "morgan": "1.10.0",
-    "node-sass-middleware": "1.0.1",
+    "node-sass-middleware": "1.1.0",
     "serve-favicon": "2.5.0"
   },
   "devDependencies": {
