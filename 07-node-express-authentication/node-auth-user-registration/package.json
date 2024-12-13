@@ -23,6 +23,6 @@
   },
   "devDependencies": {
     "debug": "4.3.6",
-    "nodemon": "3.1.4"
+    "nodemon": "3.1.9"
   }
 }
