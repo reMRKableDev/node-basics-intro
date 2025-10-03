@@ -22,7 +22,7 @@
     "serve-favicon": "2.5.0"
   },
   "devDependencies": {
-    "debug": "4.3.6",
+    "debug": "4.4.3",
     "nodemon": "3.1.10"
   }
 }
