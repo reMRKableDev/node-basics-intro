@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "cookie-parser": "1.4.6",
-    "dotenv": "16.4.7",
+    "dotenv": "17.2.3",
     "express": "4.19.2",
     "hbs": "4.2.0",
     "mongoose": "8.19.0",
