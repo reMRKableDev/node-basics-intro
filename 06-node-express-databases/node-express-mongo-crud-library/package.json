@@ -9,7 +9,7 @@
     "seed": "node bin/seed.js"
   },
   "dependencies": {
-    "body-parser": "2.2.0",
+    "body-parser": "2.2.1",
     "cookie-parser": "1.4.6",
     "dotenv": "16.4.7",
     "express": "4.19.2",
